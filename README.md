@@ -6,7 +6,7 @@ This project implements a comprehensive machine learning pipeline to predict dia
 
 ## Dataset Description
 
-**Pima Indians Diabetes Dataset**
+**Diabetes Dataset**
 - **Samples**: 768 women
 - **Features**: 8 medical measurements
   - Pregnancies: Number of times pregnant
@@ -110,13 +110,8 @@ Run the notebooks in sequence:
 Model performance results are saved in:
 - `results/model_performance.csv` - Detailed metrics for all models
 - `results/figures/` - Visualization outputs
-- `models/best_model.pkl` - Best performing model
 
-## Key Findings
-
-*(Results will be populated after running the notebooks)*
 
 ## References
 
-- Dataset Source: [Pima Indians Diabetes Database](https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database)
-- Course: CMPE403 Data Science & Analytics
+- Dataset Source: [[Diabetes Database](https://www.kaggle.com/datasets/mathchi/diabetes-data-set?phase=FinishSSORegistration&returnUrl=/datasets/mathchi/diabetes-data-set/versions/1?resource=download&SSORegistrationToken=CfDJ8KYR5TFjzfZErZMgR3fFdNgvfNt38gEIw4uo4h2ad3wET68hN9VcMrbj4OQ5aeyf1UgZmwuyQiBK3VM0Lj0ZPe1eZdZ2GmGJdre1ttHejg6CYe8ual7BNu1llTBtibI4aZPGAo_Jw79C9-QKv5VSbIhEPzwr7_L0aoC1WvKPHtoNErHDSnzmOYEY-NCR9WbQPUNYNGS7EHROYR94F-16bwYZ-TnspHgpdYlfMlTOdFVpDSfwLw2uqD9qleiemgki6xbjHVjE3OXbxFIE5tEB6oXMZmGKHhNUc4TqkUcob1XtbtQj7cht_45L7i_j7EG5R_kLaDDKRfgN6ph1HYyCFBBM14dk4g&DisplayName=Hasan%20Tezcan)]
