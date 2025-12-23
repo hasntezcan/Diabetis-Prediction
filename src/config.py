@@ -70,22 +70,25 @@ MODEL_PARAMS = {
 }
 
 # Hyperparameter tuning grids
+# Updated with stronger regularization to prevent overfitting
 PARAM_GRIDS = {
     'logistic_regression': {
         'C': [0.001, 0.01, 0.1, 1, 10, 100],
-        'penalty': ['l2'],
-        'solver': ['lbfgs', 'liblinear']
+        'penalty': ['l1', 'l2'],
+        'solver': ['saga', 'liblinear']
     },
     'decision_tree': {
-        'max_depth': [3, 5, 7, 10, 15, 20],
-        'min_samples_split': [2, 5, 10],
-        'min_samples_leaf': [1, 2, 4]
+        'max_depth': [3, 5, 7, 10],  # Reduced maximum depth
+        'min_samples_split': [5, 10, 20],  # Increased minimum
+        'min_samples_leaf': [2, 4, 8],  # Increased minimum
+        'max_features': ['sqrt', 'log2', None]  # Added feature subsampling
     },
     'random_forest': {
         'n_estimators': [50, 100, 200],
-        'max_depth': [5, 10, 15, 20],
-        'min_samples_split': [2, 5, 10],
-        'min_samples_leaf': [1, 2, 4]
+        'max_depth': [3, 5, 7, 10],  # More conservative depths
+        'min_samples_split': [10, 20, 30],  # Stronger constraints
+        'min_samples_leaf': [4, 8, 12],  # Higher minimums
+        'max_features': ['sqrt', 'log2']  # Feature subsampling for diversity
     },
     'knn': {
         'n_neighbors': [3, 5, 7, 9, 11, 15],

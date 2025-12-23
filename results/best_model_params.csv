@@ -1,2 +1,2 @@
-model,max_depth,min_samples_leaf,min_samples_split,n_estimators
-Random Forest,10,4,2,50
+model,metric,n_neighbors,weights
+KNN,euclidean,15,distance
