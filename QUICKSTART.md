@@ -26,7 +26,7 @@ jupyter notebook notebooks/02_data_preprocessing.ipynb
 ```bash
 jupyter notebook notebooks/03_model_training_evaluation.ipynb
 ```
-**What it does**: Trains 7 classification models, evaluates performance, compares results
+**What it does**: Trains 5 classification models, evaluates performance, compares results
 
 #### Step 4: Hyperparameter Tuning
 ```bash
@@ -51,10 +51,8 @@ jupyter notebook notebooks/04_hyperparameter_tuning.ipynb
 1. Logistic Regression
 2. Decision Tree
 3. Random Forest
-4. SVM
-5. KNN
-6. XGBoost
-7. Naive Bayes
+4. KNN
+5. Naive Bayes
 
 ### Saved Models
 - `models/best_model.pkl` - Best model from initial training
@@ -68,7 +66,7 @@ jupyter notebook notebooks/04_hyperparameter_tuning.ipynb
 ## 💡 Key Features
 
 ✅ **Complete ML Pipeline**: From raw data to deployed model
-✅ **7 Algorithms**: Comprehensive model comparison
+✅ **5 Algorithms**: Comprehensive model comparison
 ✅ **Hyperparameter Tuning**: GridSearchCV optimization
 ✅ **Rich Visualizations**: 16+ professional charts
 ✅ **Reusable Code**: Utility functions in `src/utils.py`
@@ -79,7 +77,7 @@ jupyter notebook notebooks/04_hyperparameter_tuning.ipynb
 Based on the Pima Indians Diabetes dataset:
 - **Accuracy**: 70-80%
 - **ROC-AUC**: 0.75-0.85
-- **Best Models**: Usually Random Forest, XGBoost, or Logistic Regression
+- **Best Models**: Usually Random Forest or Logistic Regression
 
 ## 📝 Project Structure
 ```
