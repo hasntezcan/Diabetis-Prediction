@@ -74,7 +74,7 @@ Run the notebooks in sequence:
    ```bash
    jupyter notebook notebooks/03_model_training_evaluation.ipynb
    ```
-   - Train 7 classification algorithms
+   - Train 5 classification algorithms
    - Evaluate with multiple metrics
    - Compare model performance
 
@@ -90,10 +90,8 @@ Run the notebooks in sequence:
 1. Logistic Regression
 2. Decision Tree Classifier
 3. Random Forest Classifier
-4. Support Vector Machine (SVM)
-5. K-Nearest Neighbors (KNN)
-6. Gradient Boosting (XGBoost)
-7. Naive Bayes
+4. K-Nearest Neighbors (KNN)
+5. Naive Bayes
 
 ## Evaluation Metrics
 

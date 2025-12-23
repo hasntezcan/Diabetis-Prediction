@@ -63,19 +63,8 @@ MODEL_PARAMS = {
         'random_state': RANDOM_STATE,
         'max_depth': 10
     },
-    'svm': {
-        'kernel': 'rbf',
-        'random_state': RANDOM_STATE,
-        'probability': True
-    },
     'knn': {
         'n_neighbors': 5
-    },
-    'xgboost': {
-        'n_estimators': 100,
-        'max_depth': 5,
-        'learning_rate': 0.1,
-        'random_state': RANDOM_STATE
     },
     'naive_bayes': {}
 }
@@ -98,21 +87,10 @@ PARAM_GRIDS = {
         'min_samples_split': [2, 5, 10],
         'min_samples_leaf': [1, 2, 4]
     },
-    'svm': {
-        'C': [0.1, 1, 10, 100],
-        'gamma': ['scale', 'auto', 0.001, 0.01, 0.1],
-        'kernel': ['rbf', 'linear']
-    },
     'knn': {
         'n_neighbors': [3, 5, 7, 9, 11, 15],
         'weights': ['uniform', 'distance'],
         'metric': ['euclidean', 'manhattan']
-    },
-    'xgboost': {
-        'n_estimators': [50, 100, 200],
-        'max_depth': [3, 5, 7],
-        'learning_rate': [0.01, 0.1, 0.3],
-        'subsample': [0.8, 1.0]
     }
 }
 
