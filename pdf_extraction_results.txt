@@ -1,0 +1,3541 @@
+
+==================================================
+FILE: lecture\Module 3_Review of BDA methods_new-2025.pdf
+==================================================
+Number of Pages: 36
+
+--- Page 1 ---
+Taner Arsan, Assoc. Prof. Module3 10/8/2025
+Module 3: Basic Data Analytic Methods Using Python/R 1
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Module 3 – Review of Basic Data Analytic 
+Methods Using Python
+1Module 3: Basic Data Analytic Methods Using R
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Module 3: Review of Basic Data Analytic Methods 
+Using Python
+Upon completion of this module, you should be able to:
+• Use basic analytics methods such as distributions, 
+statistical tests and summary operations to 
+investigate a data set.
+• Use R as a tool to perform basic data analytics, 
+reporting and basic data visualization.
+Module 3: Basic Data Analytic Methods Using R 2
+1
+2
+--- Page 2 ---
+Taner Arsan, Assoc. Prof. Module3 10/8/2025
+Module 3: Basic Data Analytic Methods Using Python/R 2
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Putting the Data Analytics Lifecycle into Practice
+•From Module 2 you learned a strategy to approach any data 
+analytics problem:
+• Phase 1: Discovery 
+• Phase 2: Data Preparation 
+• Phase 3: Model Planning  (covered in Module 4)
+• Phase 4: Model Building
+• Phase 5: Communicate Results
+• Phase 6: Operationalize
+•To begin to analyze the data you need:
+ 1. A tool that allows you to look at the data – that is “Python or R”.
+ 2. Skill in basic statistics – we’re providing a refresher. 
+3Module 3: Basic Data Analytic Methods Using R
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Data Analytics Lifecycle
+Module 2: Data Analytics Lifecycle 4
+Discovery
+Operationalize
+Model 
+Planning
+Data Prep
+Model 
+Building
+Communicate 
+Results 
+Do I have enough 
+information to draft an 
+analytic plan and share for 
+peer review?
+Do I have 
+enough good 
+quality data to 
+start building 
+the model?
+Do I have a good idea 
+about the type of model 
+to try?  Can I refine the 
+analytic plan?
+Is the model robust 
+enough?  Have we 
+failed for sure?
+1
+2
+3
+4
+6
+5
+3
+4
+--- Page 3 ---
+Taner Arsan, Assoc. Prof. Module3 10/8/2025
+Module 3: Basic Data Analytic Methods Using Python/R 3
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Module 3: Review of Basic Data Analytic Methods Using R
+During this lesson the following topics are covered:
+• Using the R Graphical User Interface
+• Overview: Getting Data into (and out of) R 
+• Data Types Used in R
+• Basic R Operations 
+• Basic Statistics
+• Generic Functions
+Lesson 1: Using R to Look at Data – Introduction to R
+Module 3: Basic Data Analytic Methods Using R 5
+GETTING A HANDLE 
+ON THE DATA
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Module 3: Review of Basic Data Analytic Methods Using R
+R, also called the Language for Statistical Computing:
+• Developed Ross Ihaka and Robert Gentleman at the 
+University of Auckland in the nineties.
+• Open Source Implementation of the S Language, so GNU is S.
+• S Language was developed by John Chambers in the Bell 
+Laboratories in the eighties.
+• R provides a wide variety of statistical techniques and 
+visualization capabilities.
+Lesson 1: Using R to Look at Data – Introduction to R
+Module 3: Basic Data Analytic Methods Using R 6
+5
+6
+--- Page 4 ---
+Taner Arsan, Assoc. Prof. Module3 10/8/2025
+Module 3: Basic Data Analytic Methods Using Python/R 4
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Module 3: Review of Basic Data Analytic Methods Using R
+• Another very important feature about R is that it is highly 
+extensible. Because R is open source.
+• It actually was the vehicle to bring the power of S language to 
+a larger community.
+• Like every programming languages, there are pros and cons.
+Lesson 1: Using R to Look at Data – Introduction to R
+Module 3: Basic Data Analytic Methods Using R 7
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Module 3: Review of Basic Data Analytic Methods Using R
+Start with Pros first ,
+• It is open source, so it is free.
+• R’s graphical capabilities are top notch and it is very easy to build 
+publications quality plots.
+• In comparison to many other statistical software packages, R uses a
+command R uses a command line interface, which means that you have
+to actually code things in your console and in scripts.
+• While this might be frustrating at first, it makes your work reproducible.
+You can now wrap your work in R scripts, which you can then easily
+share with your colleagues. Because of these advantages, R appeals to a
+large audience both in academia and in business.
+Lesson 1: Using R to Look at Data – Introduction to R
+Module 3: Basic Data Analytic Methods Using R 8
+7
+8
+--- Page 5 ---
+Taner Arsan, Assoc. Prof. Module3 10/8/2025
+Module 3: Basic Data Analytic Methods Using Python/R 5
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Module 3: Review of Basic Data Analytic Methods Using R
+Pros (Cont.) ,
+• Moreover, it's fairly easy to create R packages, which are
+extensions of R, aimed at solving particular problems.
+• R's very active community has created thousands of well-
+documented R packages for a very broad range of applications
+in the financial sector, health care and for cutting edge
+research.
+Lesson 1: Using R to Look at Data – Introduction to R
+Module 3: Basic Data Analytic Methods Using R 9
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Module 3: Review of Basic Data Analytic Methods Using R
+However, as with anything, there are also some disadvantages,
+• R seems to be relatively easy to learn at first, but it is hard to really 
+master it. 
+• Also the fact that R is command-based is a frightening detail for 
+statisticians that are used to the typical point and click programs out 
+there. 
+• This steep learning curve sometimes results in poorly written R code that 
+can be hard, both to read and to maintain. 
+• Furthermore, poorly written R code can become slow if you're working 
+with large data sets.
+Lesson 1: Using R to Look at Data – Introduction to R
+Module 3: Basic Data Analytic Methods Using R 10
+9
+10
+--- Page 6 ---
+Taner Arsan, Assoc. Prof. Module3 10/8/2025
+Module 3: Basic Data Analytic Methods Using Python/R 6
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Module 3: Review of Basic Data Analytic Methods Using R
+However, as with anything, there are also some disadvantages,
+• But fear not! This course is here to help you master R in no 
+time! 
+• Use this course to get a grip on R's fundamental concepts, and 
+you can always consult R Documentation for documentation 
+on all publicly available R packages. 
+• Next up: your first steps in R!
+Lesson 1: Using R to Look at Data – Introduction to R
+Module 3: Basic Data Analytic Methods Using R 11
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Five Things to Remember About R 
+1. (Almost) everything is a object
+2. (Almost ) everything is a vector 
+ Example: x <- 3       -- x is a vector of length 1
+v <- c(2,4,6,8,10) -- v is a vector of length 5
+3. All commands are functions 
+ Example: quit() or q(), not q
+4. Some commands produce different output depending…
+5. Know your default arguments! 
+12Module 3: Basic Data Analytic Methods Using R
+11
+12
+--- Page 7 ---
+Taner Arsan, Assoc. Prof. Module3 10/8/2025
+Module 3: Basic Data Analytic Methods Using Python/R 7
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Five Things to Remember About R (Continued) 
+1. (Almost) everything is a object
+2. (Almost ) everything is a vector 
+ Example: a <- 3 --- a is a 1x1 vector,
+v <- c(1,2,3,4,5)is a 1x5 vector
+3. All commands are functions 
+ Example: quit() or q(), not q
+4. Some commands produce different output depending…
+5. Know your default arguments! 
+13Module 3: Basic Data Analytic Methods Using R
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Using the RStudio Graphical User Interface
+Script Workspace 
+Plot
+Console
+14Module 3: Basic Data Analytic Methods Using R
+13
+14
+--- Page 8 ---
+Taner Arsan, Assoc. Prof. Module3 10/8/2025
+Module 3: Basic Data Analytic Methods Using Python/R 8
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Overview: Getting Data Into (and Out of) R 
+•Getting Data Into R 
+ Type it in (if it’s small)! 
+ Read from a data file
+ Read from a database
+•Getting Data Out of R
+ Save in a workspace 
+ Write a text file 
+ Save an object to the file system
+ You can save plots as well! 
+15Module 3: Basic Data Analytic Methods Using R
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Typing Data Into R  
+16Module 3: Basic Data Analytic Methods Using R
+15
+16
+--- Page 9 ---
+Taner Arsan, Assoc. Prof. Module3 10/8/2025
+Module 3: Basic Data Analytic Methods Using Python/R 9
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Getting Data Into R: External Sources
+• R supports multiple file formats
+ read.table()is the main function 
+• File name can be a URL
+ read.table(“http://ahost/file.csv”, sep=“,”) is the 
+same as read.csv(…)
+• Can read directly from a database via ODBC interface
+ mydb <- odbcConnect(“MyPostgresDB”, …)
+• R packages exist to read data from Hadoop or HDFS (more later)
+Module 3: Basic Data Analytic Methods Using R
+Note! R always uses the forward-slash (“/”) character in full file names
+“C:/users/janedoe/My Documents/Script.R”
+17
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Getting Data Out of R 
+18Module 3: Basic Data Analytic Methods Using R
+R CodeOptions
+save.image(file=“dfm.Rdata”)
+save.image()  # a .Rdata file
+load.image(“dfm.Rdata”)
+Save it as part of your workspace 
+(or a different workspace)
+write.csv(dfm, file=“dfm.csv”)Save it as a data file 
+save(Mydata,
+file=“Mydata.Rdata”) 
+load(file=“Mydata.Rdata”)
+Save it as an R object 
+saveplot(filename=“filename.ext”,
+type=“type”)
+Plots can be saved as images
+17
+18
+--- Page 10 ---
+Taner Arsan, Assoc. Prof. Module3 10/8/2025
+Module 3: Basic Data Analytic Methods Using Python/R 10
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Data Classification: A Quick Review
+Module 3: Basic Data Analytic Methods Using R 19
+ExamplesData “Noir”
+condo, house, rentalNominal
+hates < dislikes <neutral < likes < lovesOrdinal
+10F colder tomorrow than todayInterval 
+5342 > 4321Ratio
+Some statistical tests require data at the interval level or higher. 
+Other tests assume ordinal or nominal. Make sure you check.
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Data Types Used in R
+Module 3: Basic Data Analytic Methods Using R 20
+R CodeData Types
+n <- 3
+s <- “columbus, ohio” 
+Numbers, Strings
+levels <- c(“Wow”, “Good”,“Bad”)
+ratings <- c(“Bad”, “Bad”, “Wow”)
+Vectors
+f <- factor(ratings, levels)
+l <- list(ratings=ratings, 
+critics=c(“Siskel”,“Ebert”))
+Factors and Lists
+stdev <- function(x) {sd(x)}Functions
+19
+20
+--- Page 11 ---
+Taner Arsan, Assoc. Prof. Module3 10/8/2025
+Module 3: Basic Data Analytic Methods Using Python/R 11
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+R Structured Types
+Module 3: Basic Data Analytic Methods Using R 21
+R CodeData Types
+m <- matrix( c(1:3, 11:13), nrow  = 2, ncol = 3, 
+byrow = TRUE)
+Matrix - (n*m numeric data 
+frame)
+t <- table(dfm$factor_variable)Table – contingency table 
+dfm <- read.csv(“CrimeRatesByStates2005.csv”)Data frames – data sets
+xdfm <- dfm[1:3,]
+ydfm <- dfm[, 3:5]
+s <- dfm$state
+Extracting data 
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Basic R Operations on Vectors
+R CodeFunction
+v <- c(1:10); w <- c(15:24) ; nv <- v * pi ; nw <- w * v Operations on Vectors
+radius <- sqrt( d$area)/ pi)
+t <- as.table(dfm$factor_variable)
+pct <- t/sum(t)* 100 
+Vector transformations
+v[ v < 1000 ]
+ndf <- subset(dfm, d$population < 10000)
+nv <- v[c(1,2,3,5,8,13)]
+Logical Vectors
+dim(dfm); attributes(dfm) ; class(dfm); typeof(dfm)Examining data structures
+22Module 3: Basic Data Analytic Methods Using R
+21
+22
+--- Page 12 ---
+Taner Arsan, Assoc. Prof. Module3 10/8/2025
+Module 3: Basic Data Analytic Methods Using Python/R 12
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Descriptive Statistics
+R CodeFunction
+head(x); tail(x)View the data 
+summary(x)View a summary of the data 
+sd(x); var(x); range(x); IQR(x)Compute basic statistics
+cor(x); cor(d$var1, d$var2)Correlation
+23Module 3: Basic Data Analytic Methods Using R
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Generic Functions
+•Also known as method overriding in OO-land
+•Specific actions that differ based on the class of the object :
+•Good for initial data exploration (more later)
+Module 3: Basic Data Analytic Methods Using R 24
+FunctionCode
+plot (x)Plot the variable x
+hist (x)Histogram of x
+str (x)Internal structure of  x
+23
+24
+--- Page 13 ---
+Taner Arsan, Assoc. Prof. Module3 10/8/2025
+Module 3: Basic Data Analytic Methods Using Python/R 13
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Check Your Knowledge
+•Which data structures in R are the most used? Why? 
+•Consider the cbind() function and the rbind() function that bind 
+a  vector to a data frame as a new column or a new row. When 
+might these functions be useful? 
+Module 3: Basic Data Analytic Methods Using R 25
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Module 3: Review of Basic Data Analytic Methods Using R
+During this lesson the following topics were covered:
+• How to use the R Graphical User Interface
+• How to get data into (and out of) R
+• Data Types used in R, and the basic R operations 
+• Basic descriptive statistics
+• Using generic functions
+Lesson 1: Summary
+Module 3: Basic Data Analytic Methods Using R 26
+25
+26
+--- Page 14 ---
+Taner Arsan, Assoc. Prof. Module3 10/8/2025
+Module 3: Basic Data Analytic Methods Using Python/R 14
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Lab Exercise 2: Introduction to R 
+Module 3: Basic Data Analytic Methods Using R 27
+This lab is designed to investigate and practice working 
+with R and using it to examine data.
+•After completing the tasks in this lab you should able to:
+• Read data sets into R, save them, and examine the 
+contents
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Lab Exercise 2: Introduction to R 
+Module 3: Basic Data Analytic Methods Using R 28
+1
+ • Invoke the R environment
+2
+ •E x a m i n e  t h e  W o r k s p a c e
+3
+ • Getting Familiar with R
+4
+ • Read in the Lab Script
+5
+ • Working with R : reading external data
+6
+ • Verify the contents of the tables
+7
+ • Manipulating data frames in R 
+8
+ • Investigate your data
+9
+ • Save the data sets
+10
+ • Continue investigating the data
+11
+ •E x i t  R
+27
+28
+--- Page 15 ---
+Taner Arsan, Assoc. Prof. Module3 10/8/2025
+Module 3: Basic Data Analytic Methods Using Python/R 15
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Module 3: Review of Basic Data Analytic Methods Using R
+During this lesson the following topics are covered:
+• Why visualize?
+• Examining a single variable
+• Examining pairs of variables
+• Indications of dirty data.
+• Data exploration vs. presentation
+Lesson 2: Analyzing and Exploring the Data
+Module 3: Basic Data Analytic Methods Using R 29
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Why Visualize?
+Summary statistics give us some sense of the data:
+ Mean vs. Median.
+ Standard deviation.
+ Quartiles, Min/Max.
+ Correlations between variables.
+summary(data)
+x                  y           
+Min.   :-3.05439   Min.   :-3.50179  
+1st Qu.:-0.61055   1st Qu.:-0.75968  
+Median : 0.04666   Median : 0.07340  
+Mean   :-0.01105   Mean   : 0.09383  
+3rd Qu.: 0.56067   3rd Qu.: 0.88114  
+Max.   : 2.60614   Max.   : 4.28693 
+Visualization gives us 
+a more holistic sense
+30Module 3: Basic Data Analytic Methods Using R
+29
+30
+--- Page 16 ---
+Taner Arsan, Assoc. Prof. Module3 10/8/2025
+Module 3: Basic Data Analytic Methods Using Python/R 16
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Anscombe’s Quartet
+Module 3: Basic Data Analytic Methods Using R
+ValuesProperty
+9Mean of x in each case
+11Exact variance of x in each 
+case
+7.5 (to 2 d.p)Exact mean of y in each 
+case
+4.13 (to 2 d.p)Variance of Y in each case
+0.816Correlations between x 
+and y in each case
+Y = 3.00 + 
+0.500x (to 2 
+d.p and 3 d.p 
+resp.)
+Linear regression line in 
+each case
+4 data sets, characterized by the following. Are they the same, or are they different? 
+i
+yX
+8.0410.00
+6.958.00
+7.5813.00
+8.819.00
+8.3311.00
+9.9614.00
+7.246.00
+4.264.00
+10.8412.00
+4.827.00
+5.685.00
+ii
+yx
+9.1410.00
+8.148.00
+8.7413.00
+8.779.00
+9.2611.00
+8.1014.00
+6.136.00
+3.104.00
+9.1312.00
+7.267.00
+4.745.00
+iii
+yx
+7.4610.00
+6.778.00
+12.7413.00
+7.119.00
+7.8111.00
+8.8414.00
+6.086.00
+5.394.00
+8.1512.00
+6.427.00
+5.735.00
+iv
+yx
+6.588.00
+5.768.00
+7.718.00
+8.848.00
+8.478.00
+7.048.00
+5.258.00
+12.5019.00
+5.568.00
+7.918.00
+6.898.00
+31
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Moral: Visualize Before Analyzing! 
+32Module 3: Basic Data Analytic Methods Using R
+31
+32
+--- Page 17 ---
+Taner Arsan, Assoc. Prof. Module3 10/8/2025
+Module 3: Basic Data Analytic Methods Using Python/R 17
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Visualizing Your Data
+•Examining the distribution of a single variable
+•Analyzing the relationship between two variables
+•Establishing multiple pair wise relationships between variables
+•Analyzing a single variable over time
+•Data exploration versus data presentation
+Module 3: Basic Data Analytic Methods Using R 33
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Examining the Distribution of a Single Variable 
+Graphing a single variable
+•plot(sort(.)) – for low volume data
+•hist(.) – a histogram
+•plot(density(.)) – densityplot
+ A "continuous histogram“
+•Example
+ Frequency table of household 
+income
+Module 3: Basic Data Analytic Methods Using R 34
+33
+34
+--- Page 18 ---
+Taner Arsan, Assoc. Prof. Module3 10/8/2025
+Module 3: Basic Data Analytic Methods Using Python/R 18
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Examining the Distribution of a Single Variable 
+Graphing a single variable
+•plot(sort(.)) – for low volume data
+•hist(.) – a histogram
+•plot(density(.)) – densityplot
+ A "continuous histogram“
+•Example
+ Frequency table of household 
+income
+ rug() plot emphasizes 
+distribution
+Module 3: Basic Data Analytic Methods Using R 35
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+A sense of the data range
+• If it's very wide, or very skewed, try computing the 
+log 
+Outliers, anomalies
+• Possibly evidence of dirty data
+Shape of the Distribution
+• Unimodal? Bimodal?
+• Skewed to left or right?
+• Approximately normal? Approximately lognormal?
+Example - Distribution of purchase size ($)
+• Range from 0 to  > $10K, right skewed
+• Typical of monetary data
+• Plotting log of data gives better sense of distribution
+• Two purchasing distributions
+ ~ $55
+ ~ $2900
+What are we looking for?
+Module 3: Basic Data Analytic Methods Using R 36
+35
+36
+--- Page 19 ---
+Taner Arsan, Assoc. Prof. Module3 10/8/2025
+Module 3: Basic Data Analytic Methods Using Python/R 19
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Evidence of Dirty Data
+Module 3: Basic Data Analytic Methods Using R 37
+Missing 
+values?
+Mis-entered 
+data? 
+Inherited 
+accounts?
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+"Saturated" Data
+Module 3: Basic Data Analytic Methods Using R 38
+Do we really have no 
+mortgages older than 
+10 years?
+Or does the year
+2004 in the origination
+field mean "2004 or 
+prior"?
+37
+38
+--- Page 20 ---
+Taner Arsan, Assoc. Prof. Module3 10/8/2025
+Module 3: Basic Data Analytic Methods Using Python/R 20
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Analyzing the Relationship Between Two Variables
+Module 3: Basic Data Analytic Methods Using R
+ 39
+How? 
+• Two Continuous Variables  (or two discrete variables)
+ Scatterplots
+ LOESS (fit smoothed line to the data)
+ Linear models: graph the correlation
+ Binplots, hexbin plots 
+ More legible color-based plots for high 
+volume data
+• Continuous vs. Discrete Variable
+ Jitter,  Box and whisker plots, Dotplot or
+barchart
+Example: 
+• Household income by region (ZIP1)
+• Scatterplot with jitter, with box-and-whisker overlaid
+• New England (0) and West Coast (9) have highest 
+mean household income
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Analyzing the Relationship … (Continued)
+Module 3: Basic Data Analytic Methods Using R
+ 40
+How? 
+• Two Continuous Variables  (or two discrete variables)
+ Scatterplots
+ LOESS (fit smoothed line to the data)
+ Linear models: graph the correlation
+ Binplots, hexbin plots 
+ More legible color-based plots for high 
+volume data
+• Continuous vs. Discrete Variable
+ Jitter,  Box and whisker plots, Dotplot or
+barchart
+Example: 
+• Household income by region (ZIP1)
+• Scatterplot with jitter, with box-and-whisker overlaid
+• New England (0) and West Coast (9) have highest 
+mean household income
+39
+40
+--- Page 21 ---
+Taner Arsan, Assoc. Prof. Module3 10/8/2025
+Module 3: Basic Data Analytic Methods Using Python/R 21
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+•Is there a relationship 
+between the two variables? 
+ Linear? Quadratic?
+ Exponential?
+ Try semi-log or log-log plots
+ Is it a cloud?
+ Round?  Concentrated? Multiple 
+Clusters?
+•How? 
+ Scatterplots
+• Example
+ Red line: linear fit
+ Blue line: LOESS
+ Fairly linear relationship, but with wide 
+variance
+Two Variables: What are we looking for?
+Module 3: Basic Data Analytic Methods Using R 41
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Two Variables: High Volume Data - Plotting
+Module 3: Basic Data Analytic Methods Using R 42
+Scatterplot:
+Overplotting makes it difficult 
+to see structure
+Hexbinplot:
+Now we see where the data is 
+concentrated.
+41
+42
+--- Page 22 ---
+Taner Arsan, Assoc. Prof. Module3 10/8/2025
+Module 3: Basic Data Analytic Methods Using Python/R 22
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Two Variables: High Volume Data – Plotting (Continued)
+Module 3: Basic Data Analytic Methods Using R 43
+Scatterplot:
+Overplotting makes it difficult 
+to see structure
+Hexbinplot:
+Now we see where the data is 
+concentrated.
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+•Why? 
+ Examine many two-way 
+relationships quickly
+•How? 
+ pairs(ds) can generate a plot of 
+each pairs of variables
+•Example
+Iris Characteristics
+ Strong linear relationship 
+between petal length and 
+width
+ Petal dimensions discriminate 
+species more strongly than 
+sepal dimensions
+Establishing Multiple Pairwise Relationships Between 
+Variables
+Module 3: Basic Data Analytic Methods Using R 44
+freesia
+43
+44
+--- Page 23 ---
+Taner Arsan, Assoc. Prof. Module3 10/8/2025
+Module 3: Basic Data Analytic Methods Using Python/R 23
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+What?
+• Looking for … 
+ Data range
+ Trends
+ Seasonality
+How?
+• Use time series plot
+Example
+•International air  travel (1949-1960)
+• Upward trend: growth appears 
+superlinear
+• Seasonality
+ Peak air travel around Nov. with smaller 
+peaks near Mar. and June
+Analyzing a Single Variable over Time
+Module 3: Basic Data Analytic Methods Using R 45
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Data Exploration vs. Presentation
+Module 3: Basic Data Analytic Methods Using R 46
+Data Exploration: 
+This tells you what you 
+need to know.
+Presentation: 
+This tells the stakeholders 
+what they need to know.
+45
+46
+--- Page 24 ---
+Taner Arsan, Assoc. Prof. Module3 10/8/2025
+Module 3: Basic Data Analytic Methods Using Python/R 24
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Data Exploration vs. Presentation (Continued)
+Module 3: Basic Data Analytic Methods Using R 47
+Data Exploration: 
+This tells you what you 
+need to know.
+Presentation: 
+This tells the stakeholders 
+what they need to know.
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Check Your Knowledge
+•Do you think the regression line sufficiently captures the 
+relationship between the two variables? What might you do 
+differently?  
+•In the Iris slide example, how would you characterize the 
+relationship between sepal width and sepal length? 
+•Did you notice the use of color in the Iris slide? Was it effective? 
+Why or why not? 
+Module 3: Basic Data Analytic Methods Using R 48
+47
+48
+--- Page 25 ---
+Taner Arsan, Assoc. Prof. Module3 10/8/2025
+Module 3: Basic Data Analytic Methods Using Python/R 25
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Module 3: Review of Basic Data Analytic Methods Using R
+During this lesson the following topics were covered:
+• Justifying why we visualize data
+• Using plots and graphs to determine: 
+• Shape of a single variable
+• “dirty” data or “saturated” data
+• Relationship between two or more variables
+• Relationship between multiple variables
+• A single variable over time 
+• Data exploration versus Presentation
+Lesson 2: Summary
+Module 3: Basic Data Analytic Methods Using R 49
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Module 3: Review of Basic Data Analytic Methods Using R
+During this lesson the following topics are covered:
+• Statistics in the Analytic Lifecycle
+• Hypothesis Testing
+• Difference of means
+• Significance, Power, Effect Size
+• ANOVA
+• Confidence Intervals
+Lesson3: Statistics for Model Building and Evaluation
+Module 3: Basic Data Analytic Methods Using R 50
+49
+50
+--- Page 26 ---
+Taner Arsan, Assoc. Prof. Module3 10/8/2025
+Module 3: Basic Data Analytic Methods Using Python/R 26
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+•Model Building and Planning
+ Can I predict the outcome with the inputs that I have?
+ Which inputs?
+•Model Evaluation
+ Is the model accurate?
+ Does it perform better than "the obvious guess"
+ Does it perform better than another candidate model?
+•Model Deployment
+ Do my predictions make a difference?
+ Are we preventing customer churn?
+ Have we raised profits?
+Statistics in the Analytic Lifecycle
+51Module 3: Basic Data Analytic Methods Using R
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Hypothesis Testing
+•Fundamental question: "Is there 
+a difference between the 
+populations based on samples?“
+ Examples : Mean, Variance
+•Null  hypothesis : There is no 
+difference
+•Alternate hypothesis : There is a 
+difference
+Module 3: Basic Data Analytic Methods Using R 52
+51
+52
+--- Page 27 ---
+Taner Arsan, Assoc. Prof. Module3 10/8/2025
+Module 3: Basic Data Analytic Methods Using Python/R 27
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Null and Alternative Hypotheses: Examples
+Module 3: Basic Data Analytic Methods Using R 53
+Alternative HypothesisNull Hypothesis
+The model predicts better than the 
+null model:
+• The average prediction error 
+from the model is smaller than 
+that of the null model
+The best estimate of the outcome is 
+the average observed value:
+• The mean is the "Null Model”
+The variable does affect outcome:
+• Coefficient value is non-zero
+This variable does not affect the 
+outcome:
+• The coefficient value is zero
+Interventions based on model 
+predictions improve revenue:
+• A/B Testing, ANOVA
+The model predictions do not improve 
+revenue:
+• Revenue is the same with or 
+without intervention
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Intuition: Difference of Means
+Module 3: Basic Data Analytic Methods Using R 54
+large
+is area this
+,m m If 21 ≈
+1m 2m
+53
+54
+--- Page 28 ---
+Taner Arsan, Assoc. Prof. Module3 10/8/2025
+Module 3: Basic Data Analytic Methods Using Python/R 28
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Welch’s t-test
+Module 3: Basic Data Analytic Methods Using R 55
+t-statistic:
+p-value: area under the tails of the 
+appropriate student's distribution
+if p-value is small (say < 0.05), then 
+reject the null hypothesis
+and assume that m1 <> m2
+m1 and m2 are "significantly 
+different"
+> x = rnorm(10) # distribution centered at 0
+> y = rnorm(10,2) # distribution centered at 2
+> t.test(x,y)
+Welch Two Sample t-test
+data:  x and y 
+t = -7.2643, df = 15.05, p-value = 2.713e-06
+alternative hypothesis: true difference in means is not 
+equal to 0 
+95 percent confidence interval:
+-2.364243 -1.291811 
+sample estimates:
+mean of x mean of y 
+0.5449713 2.3729984 
+(this is the t-statistic for the Welch t-test)
+-t   0    t
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Wilcoxon Rank Sum Test
+• t-test assumes that the populations are normally distributed
+ Sometimes this is close to true, sometimes not
+• Wilcoxon Rank Sum test
+ Makes no assumption about the distributions of the populations
+ More robust test for difference of means
+ if p-value is small: reject the null hypothesis (equal means)
+Module 3: Basic Data Analytic Methods Using R 56
+> mean(x)
+[1] 0.5449713
+> mean(y)
+[1] 2.372998
+> wilcox.test(x, y)
+wilcoxon rank sum test
+data:  x and y 
+W = 2, p-value = 4.33e-05
+alternative hypothesis: true location shift is not equal to 0 
+55
+56
+--- Page 29 ---
+Taner Arsan, Assoc. Prof. Module3 10/8/2025
+Module 3: Basic Data Analytic Methods Using Python/R 29
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Hypothesis Testing: Summary
+• Calculate the test statistic
+ Different hypothesis tests are 
+appropriate, in different situations
+• Calculate the p-value on the test 
+statistic
+• If p-value is "small" then reject the null 
+hypothesis
+ "small" is often p < 0.05 by convention 
+(95% confidence)
+ Many data scientists prefer a smaller 
+threshold.
+Module 3: Basic Data Analytic Methods Using R 57
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Generating a Hypothesis: Type I and Type II Error
+Module 3: Basic Data Analytic Methods Using R
+SpamHamIt’s Really -
+>  
+we say it’s   ↓
+OK – true positiveType I – false positiveSpam
+Type II – false negativeOK – true negativeHam
+Null hypothesis(H0) is falseNull hypothesis(H0) is trueIf H 0 is X, and we …: 
+Correct Outcome
+True positive
+We reject the Null hypothesis
+Type I error
+False positive
+α
+Fail to accept the Null 
+Hypothesis we claim 
+something happened
+Type II error
+False negative  
+β
+Correct outcome
+True negative
+Accept the NULL
+hypothesis
+Fail to reject the null hypothesis 
+we claim nothing happened.
+Example: Ham or Spam? H0: it’s Ham  HA: it’s Spam
+58
+• Goal: Identify Spam
+• Which error is worse?
+57
+58
+--- Page 30 ---
+Taner Arsan, Assoc. Prof. Module3 10/8/2025
+Module 3: Basic Data Analytic Methods Using Python/R 30
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Generating a Hypothesis: Type I and Type II Error (Continued)
+Module 3: Basic Data Analytic Methods Using R 59
+SpamHamIt’s Really -
+>  
+we say it’s   ↓
+OK – true positiveType I – false positiveSpam 
+Type II – false negativeOK – true negativeHam
+Null hypothesis(H0) is falseNull hypothesis(H0) is trueIf H 0 is X, and we …: 
+Correct Outcome
+True positive
+We reject the Null hypothesis
+Type I error
+False positive
+α
+Fail to accept the Null 
+Hypothesis we claim 
+something happened
+Type II error
+False negative  
+β
+Correct outcome
+True negative
+Accept the NULL
+hypothesis
+Fail to reject the null hypothesis 
+we claim nothing happened.
+Example: Ham or Spam? H0: it’s Ham  HA: it’s Spam
+• Goal: Identify Spam
+• Which error is worse?
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+•Significance: the probability of a false positive (α)
+ p-value is your significance
+•Power: probability of a true positive (1 - β)
+•Effect size: the size of the observed difference
+ The actual difference in means, for example
+Significance, Power and Effect Size
+Module 3: Basic Data Analytic Methods Using R 60
+59
+60
+--- Page 31 ---
+Taner Arsan, Assoc. Prof. Module3 10/8/2025
+Module 3: Basic Data Analytic Methods Using Python/R 31
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Always Keep Effect Size in Mind!
+Module 3: Basic Data Analytic Methods Using R 61
+Both power and significance 
+increase with larger sample 
+sizes.
+So you can observe an effect 
+size that is statistically
+significant, but practically
+insignificant!
+moderate 
+sample 
+size
+larger 
+sample
+size
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Hypothesis Testing: ANOVA
+ANOVA is a generalization of the difference of means
+•One-way ANOVA
+ k populations ("treatment groups")
+ ni samples each – total N subjects
+ Null hypothesis: ALL the population means are equal
+Module 3: Basic Data Analytic Methods Using R 62
+mi: avg purchase sizeni: # offers madePopulation
+$55100Offer 1
+$50102Offer 2
+$2599No intervention
+61
+62
+--- Page 32 ---
+Taner Arsan, Assoc. Prof. Module3 10/8/2025
+Module 3: Basic Data Analytic Methods Using Python/R 32
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+ANOVA: Understanding the F statistic
+Module 3: Basic Data Analytic Methods Using R 63
+Test statistic:
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+R Example:
+ANOVA
+Module 3: Basic Data Analytic Methods Using R 64
+3 different offers, and their 
+outcomes
+Use lm() to do the ANOVA
+F-statistic: reject the null hypothesis
+.No appreciable difference between offer1 and offer2
+offer1-nooffer
+offer2-nooffer
+>offers = sample(c("noffer", "offer1", "offer2"), 
+size=500, replace=T)
+>purchasesize = ifelse(offers=="noffer", rlnorm(500, 
+meanlog=log(25)), ifelse(offers=="offer1", rlnorm(500, 
+meanlog=log(50)), rlnorm(500, meanlog=log(55))))
+>offertest = data.frame(offer=as.factor(offers), 
+purchase_amt=purchasesize)
+> model = lm(log10(purchase_amt) ~ as.factor(offers), 
+data=offertest)   
+>summary(model)
+Residuals:
+Min            1Q   Median        3Q       Max 
+-1.1940    -0.2837    0.0135  0.2863   1.3374 
+Coefficients:
+Estimate  Std. Error      t value       Pr(>|t|)    
+(Intercept)                     1.49092    0.03240     46.011       < 2e-16 ***
+as.factor(offers)offer1  0.20424    0.04706        4.340     1.73e-05 ***
+as.factor(offers)offer2  0.22371    0.04596        4.867      1.52e-06 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1 
+Residual standard error: 0.4262 on 497 degrees of freedom
+Multiple R-squared: 0.05479,    Adjusted R-squared: 0.05098 
+F-statistic:  14.4 on 2 and 497 DF,  p-value: 8.304e-07 
+> TukeyHSD(aov(model))
+Tukey multiple comparisons of means
+95% family-wise confidence level
+Fit: aov(formula = model)
+$offers
+diff                lwr upr p adj
+offer1-noffer 0.20424099  0.09361976 0.3148622 0.0000512
+offer2-noffer 0.22370761  0.11566775 0.3317475 0.0000045
+offer2-offer1 0.01946663 -0.09146092 0.1303942 0.9104871
+Tukey's test: all pair-wise tests for difference of means
+95% confidence intervals for difference between means
+63
+64
+--- Page 33 ---
+Taner Arsan, Assoc. Prof. Module3 10/8/2025
+Module 3: Basic Data Analytic Methods Using Python/R 33
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Confidence Intervals
+Module 3: Basic Data Analytic Methods Using R 65
+If x is your estimate of some unknown value μ, 
+the P% confidence interval
+is the interval around x that μ will fall in, with 
+probability P.
+Example:
+• Normal data N( μ, σ) 
+• x is the estimate of μ
+• based on n samples
+μ falls in the interval 
+x ± 2σ/√n
+with approx. 95% probability
+("95% confidence")
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Example
+The defect rate of a disk drive manufacturing process is within 0.9% -
+1.7%, with 98% confidence. We inspect a sample of 1000 drives from 
+one of our plants.
+Module 3: Basic Data Analytic Methods Using R 66
+• We observe 13 defects in 
+our sample.
+• Should we inspect the plant 
+for problems?
+• What if we observe 25 
+defects in the sample?
+65
+66
+--- Page 34 ---
+Taner Arsan, Assoc. Prof. Module3 10/8/2025
+Module 3: Basic Data Analytic Methods Using Python/R 34
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Check Your Knowledge
+•Refer back to the ANOVA example on an earlier slide. What do 
+you think? Does the difference between offer1 and offer2 make 
+a practical difference? Should we go ahead and implement one 
+of them? 
+•If yes, and the costs were US $25 for each offer1 and US $10 for 
+offer2, would you still make the same decision?
+•In our manufacturing plant example, assuming you would check 
+the plant for problems in the manufacturing process, how might 
+you justify this decision financially? 
+Module 3: Basic Data Analytic Methods Using R 67
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Module 3: Review of Basic Data Analytic Methods Using R
+During this lesson the following topics were covered:
+• The role of Statistics in the Analytic Lifecycle
+• Developing a model and generating the null and the alternative 
+hypothesis
+• Difference between means
+• Difference between significance, power and effect size, and how they 
+relate to Type I and Type II errors
+• Applying ANOVA and determining whether the results are significant
+• Defining confidence intervals and applying them
+Lesson 3: Summary
+Module 3: Basic Data Analytic Methods Using R 68
+67
+68
+--- Page 35 ---
+Taner Arsan, Assoc. Prof. Module3 10/8/2025
+Module 3: Basic Data Analytic Methods Using Python/R 35
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Lab Exercise 3: Basic Statistics, Visualization and 
+Hypothesis Tests
+Module 3: Basic Data Analytic Methods Using R 69
+This lab is designed to investigate and practice using R to 
+perform basic statistics and visualization on data and to 
+perform hypothesis testing. 
+• After completing the tasks in this lab you should able 
+to: 
+• Perform basic data analysis 
+• Visualize data with R
+• Create and test a hypothesis
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Lab Exercise 3: Basic Statistics, Visualization and 
+Hypothesis Tests– Part1 - Workflow
+Module 3: Basic Data Analytic Methods Using R 70
+1
+ • Prepare working environment for the Lab and load data files
+2
+ • Obtain summary statistics for Household Income and visualize data
+3
+ • Obtain summary statistics for number of rooms and visualize data
+4
+ • Remove Outliers
+5
+ • Stratify  Variable – Household Income and plot the results
+6
+ • Plot Histogram and Distributions
+7
+ • Compute Correlation between income and number of rooms
+8
+ • Create a Boxplot – Distribution of income as a factor of number of rooms
+9
+ •E x i t  R
+69
+70
+--- Page 36 ---
+Taner Arsan, Assoc. Prof. Module3 10/8/2025
+Module 3: Basic Data Analytic Methods Using Python/R 36
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Lab Exercise 3: Basic Statistics, Visualization and 
+Hypothesis Tests - Part 2 - Workflow
+Module 3: Basic Data Analytic Methods Using R 71
+1
+ • Define problem – Analysis of Variance (ANOVA)
+2
+ • Generate the Data
+3
+ •E x a m i n e  t h e  D a t a
+4
+ • Plot and determine how purchase size varies within the three groups
+5
+ • Use lm() to do the ANOVA
+6
+ • Use Tukey’s test to check all the differences of means
+7
+ • Use the lattice package for density plot
+8
+ • Plot the Logarithms of the Data
+9
+ • Use ggplot() package
+10
+ • Generate the example data to perform a Hypothesis Test with manual calculations
+11
+ • Create a function to calculate the pooled variance, which is used in the Student’s t statistic
+12
+ •E x a m i n e  t h e  D a t a
+13
+ • Calculate the t statistic for Student's t-test
+14
+ • Calculate the degrees of freedom
+15
+ • Compute the area under the curve
+16
+ • Perform Student’s t-test directly and compare the results
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Module 3: Summary
+Key points covered in this module:
+• How to use basic analytics methods such as distributions, 
+statistical tests and summary operations to investigate a data set
+• How to use R to apply visualization patterns to better 
+understand the data, help develop a model and derive 
+hypotheses, and determine if our actions had a practical affect.
+Module 3: Basic Data Analytic Methods Using R 72
+71
+72
+
+==================================================
+FILE: lecture\Module 4_Theory and Methods-v3 (1).pdf
+==================================================
+Number of Pages: 95
+
+--- Page 1 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 1
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Module 4 – Advanced AnalyticsTheory and Methods
+1Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Module 4: Advanced Analytics – Theory and MethodsUpon completion of this module, you should be able to:•Examine analytic needs and select an appropriate technique based on business objectives; initial hypotheses; and the data's structure and volume•Apply some of the more commonly used methodsin Analytics solutions•Explain the algorithms and the technical foundations for the commonly used methods•Explain the environment (use case) in which each technique can provide the most value •Use appropriate diagnostic methods to validate the models created•Use Python and  in-database analytical functions to fit, score, and evaluate models
+2Module 4: Analytics Theory/Methods
+1
+2
+--- Page 2 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 2
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+The Analytical Methods covered•Categorization (un-supervised)1.K-Means clustering2.Association Rules•Regression3.Linear4.Logistic•Classification (supervised)5.Naive Bayesian classifier6.Decision Trees7.Time Series Analysis8.Text Analysis
+3Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Data Analytics Lifecycle
+Module 2: Data Analytics Lifecycle 4
+DiscoveryOperationalizeModel PlanningData PrepModel BuildingCommunicate Results Do I have enough information to draft an analytic plan and share for peer review?Do I have enough good quality data to start building the model?Do I have a good idea about the type of model to try?  Can I refine the analytic plan?Is the model robust enough?  Have we failed for sure?
+1
+2
+3
+4
+6
+5
+3
+4
+--- Page 3 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 3
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Applying the Data Analytics Lifecycle
+DiscoveryOperationalizeModel PlanningData PrepModel BuildingCommunicate Results •In a typical Data Analytics Problem - you would have gonethrough: •Phase 1 – Discovery - have the problem framed•Phase 2 – Data Preparation - have the data prepared•Now you need to plan the model and determine the method to be used.
+5Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Phase 3 - Model PlanningDiscoveryOperationalizeModel PlanningData PrepModel BuildingCommunicate Results Do I have a good idea about the type of model to try?  Can I refine the analytic plan?Is the model robust enough?  Have we failed for sure?How do people generally solve this problem with the kind of data and resources I have?• Does that work well enough? Or do I have to come up with something new?• What are related or analogous problems? How are they solved? Can I do that?
+6Module 4: Analytics Theory/Methods
+5
+6
+--- Page 4 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 4
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+What Kind of Problem do I Need to Solve? How do I Solve it?Covered in this CourseThe Category of TechniquesThe Problem to SolveK-means clusteringClusteringI want to group items by similarity.I want to find structure (commonalities) in the dataAprioriAssociation RulesI want to discover relationships between actions or itemsLinear RegressionLogistic RegressionRegressionI want to determine the relationship between the outcome and the input variablesNaïve BayesDecision TreesClassificationI want to assign (known) labels to objectsACF, PACF, ARIMATime Series AnalysisI want to find the structure in a temporal processI want to forecast the behavior of a temporal processRegular expressions, Document representation (Bag of Words), TF-IDFText AnalysisI want to analyze my text data
+7Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+ 8Module 4: Analytics Theory/Methods
+Clustering – K-means Clustering
+7
+8
+--- Page 5 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 5
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+ 9Module 4: Analytics Theory/Methods
+Association Rules
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+ 10Module 4: Analytics Theory/Methods
+Linear Regression
+9
+10
+--- Page 6 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 6
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+ 11Module 4: Analytics Theory/Methods
+Logistic Regression
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+ 12Module 4: Analytics Theory/Methods
+Classification - Naive Bayes
+11
+12
+--- Page 7 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 7
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+ 13Module 4: Analytics Theory/Methods
+Classification – Decision Trees
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+ 14Module 4: Analytics Theory/Methods
+Time Series Analysis
+13
+14
+--- Page 8 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 8
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+ 15Module 4: Analytics Theory/Methods
+Text Analysis
+Text Analysis (Text Analytics or Text Mining)is the process of converting unstructured text data into meaningful data for analysis, to measure customer opinions, product reviews, feedback, to provide search facility, sentimental analysis and entity modeling to support fact baseddecision making.
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Why These Example Techniques?•Most popular, frequently used:Provide the foundation for Data Science skills on which to build•Relatively easy for new Data Scientists to understand & comprehend•Applicable to a broad range of problems in several verticals
+16Module 4: Analytics Theory/Methods
+15
+16
+--- Page 9 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 9
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Module 4: Advanced Analytics – Theory and MethodsDuring this lesson the following topics are covered:•Clustering – Unsupervised learning method•K-means clustering:•Use cases •The algorithm•Determining the optimum value for K•Diagnostics to evaluate the effectiveness of the method•Reasons to Choose (+) and Cautions (-) of the methodLesson 1: K-means Clustering
+17Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+ClusteringHow do I group these documents by topic? How do I group my customers by purchase patterns?•Sort items into groups by similarity:Items in a cluster are more similar to each other than they are to items in other clusters.Need to detail the properties that characterize “similarity”Or of distance, the "inverse" of similarity•Not a predictive method; finds similarities, relationships•Our Example: K-means Clustering
+18Module 4: Analytics Theory/Methods
+17
+18
+--- Page 10 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 10
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+K-Means Clustering - What is it?•Used for clustering numerical data, usually a set of measurements about objects of interest.•Input:numerical. There must be a distance metric defined over the variable space.Euclidian distance •Output:The centers of each discovered cluster, and the assignment of each input datum to a cluster.Centroid
+19Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Use Cases•Often an exploratory technique:Discover structure in the dataSummarize the properties of each cluster•Sometimes a prelude to classification:"Discovering the classes“•ExamplesThe height, weight and average lifespan of animalsHousehold income, yearly purchase amount in dollars, number of household members of customer householdsPatient record with measures of BMI, HBA1C, HDL
+20Module 4: Analytics Theory/Methods
+19
+20
+--- Page 11 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 11
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Use-Case Example – On-line RetailerLTV – Lifetime Customer Value
+21Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+The Algorithm1. Choose K; then select K random "centroids"In our example, K=32. Assign records to the cluster with the closest centroid
+22Module 4: Analytics Theory/Methods
+21
+22
+--- Page 12 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 12
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+The Algorithm  (Continued)3. Recalculate the resulting centroidsCentroid: the mean value of all the records in the cluster4. Repeat steps 2 & 3 until record assignments no longer changeModel Output: •The final cluster centers•The final cluster assignments of the training data
+23Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Picking KHeuristic: find the "elbow" of the within-sum-of-squares (wss) plot as a function of K.K: # of clustersni: # points in ithclusterci: centroid of ithclusterxij: jth point of ithcluster"Elbows" at k=2,4,6
+24Module 4: Analytics Theory/Methods
+23
+24
+--- Page 13 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 13
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Diagnostics – Evaluating the Model•Do the clusters look separated in at least some of the plots when you do pair-wise plots of the clusters? Pair-wise plots can be used when there are not many variables•Do you have any clusters with few data points?Try decreasing the value of K•Are there splits on variables that you would expect, but don't see?Try increasing the value  K•Do any of the centroids seem too close to each other?Try  decreasing the value of  K
+25Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Cautions (-) Reasons to Choose (+) Doesn't handle categorical variablesEasy to implementSensitive to initialization (first guess)Easy to assign new data to existingclustersWhich is the nearest cluster center?Variables should all be measured on similar or compatible scalesNot scale-invariant!Concise outputCoordinates the K cluster centersK (the number of clusters) must be known or decided a prioriWrong guess: possibly poor resultsTends to produce "round" equi-sized clusters.Not always desirableK-Means Clustering - Reasons to Choose (+) and  Cautions (-)
+Module 4: Analytics Theory/Methods 26
+25
+26
+--- Page 14 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 14
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Check Your Knowledge 1.Why do we consider K-means clustering as a unsupervised machine learning algorithm?2.How do you use “pair-wise” plots to evaluate the effectiveness of the clustering?3.Detail the four steps in the K-means clustering algorithm.4.How do we use WSS to pick the value of K?5.What is the most common measure of distance used with K-means clustering algorithms?6.The attributes of a data set are “purchase decision (Yes/No), Gender (M/F), income group (<10K, 10-50K, >50K). Can you use K-means to cluster this data set?
+Your Thoughts?
+27Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Module 4: Advanced Analytics – Theory and MethodsDuring this lesson the following topics were covered:•Clustering – Unsupervised learning method•What is K-means clustering•Use cases with K-means clustering•The K-means clustering algorithm•Determining the optimum value for K•Diagnostics to evaluate the effectiveness of K-means clustering•Reasons to Choose (+) and Cautions (-) of K-means clusteringLesson 1: K-means Clustering - Summary
+28Module 4: Analytics Theory/Methods
+27
+28
+--- Page 15 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 15
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Lab Exercise 4: K-means Clustering•
+29Module 4: Analytics Theory/Methods
+This  Lab is designed to investigate and practice K-means Clustering.After completing the tasks in this lab you should be able to:•Use R functions to create K-means Clustering models•Use ODBC connection to the database and execute SQL statements and read database tables in an R environment •Visualize the effectiveness of the K-means Clustering algorithm using graphic capabilities in R•Use MADlib function for K-means Clustering
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Lab Exercise 4: K-means Clustering - Workflow
+Module 4: Analytics Theory/Methods 30
+1
+• Set the Working Directory2
+• Establish the ODBC Connection3
+• Open Connections to ODBC Database4
+• Get Data from the Database5
+• Read in the Data for Modeling6
+• Execute the Model7
+• Review the Output8
+• Plot the Results9
+• Find the Appropriate Number of Clusters10
+• Close Connections to ODBC Database11
+• Perform K-means Clustering Using In-database Analytics Method
+29
+30
+--- Page 16 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 16
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Module 4: Advanced Analytics – Theory and MethodsDuring this lesson the following topics are covered:Association Rules miningApriori AlgorithmProminent use cases of Association Rules Support and Confidence parametersLift and LeverageDiagnostics to evaluate the effectiveness of rules generatedReasons to Choose (+) and Cautions (-) of the Apriori algorithmLesson 2: Association Rules
+Module 4: Analytics Theory/Methods 31
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Association RulesWhich of my products tend to be purchased together?What do other people like this person tend to like/buy/watch?•Discover "interesting" relationships among variables in a large databaseRules of the form “If X is observed, then Y is also observed"The definition of  "interesting“ varies with the algorithm used for discovery•Not a predictive method; finds similarities, relationships
+32Module 4: Analytics Theory/Methods
+31
+32
+--- Page 17 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 17
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Association Rules - Apriori•Specifically designed for mining over transactions in databases•Used over itemsets: sets of discrete variables that are linked:Retail items that are purchased togetherA set of tasks done in one dayA set of links clicked on by one user in a single session•Our Example: Apriori
+33Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Apriori Algorithm - What is it?Support•Earliest of the association rule algorithms•Frequent itemset: a set of items L that appears together "often enough“:Formally: meets a minimum supportcriterionSupport: the % of transactions that contain L•Apriori Property: Any subset of a frequent itemset is also frequentIt has at least the support of its superset
+34Module 4: Analytics Theory/Methods
+33
+34
+--- Page 18 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 18
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Apriori  Algorithm (Continued)Confidence•Iteratively grow the frequent itemsets from size 1 to size K (or until we run out of support).Apriori property tells us how to prune the search space•Frequent itemsets are used to find rules X->Y with a minimum confidence:Confidence: The % of transactions that contain X, which also contain Y•Output:The set of all rules X -> Y with minimum support and confidence
+35Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Lift and Leverage
+36Module 4: Analytics Theory/Methods
+35
+36
+--- Page 19 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 19
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Association Rules Implementations•Market Basket AnalysisPeople who buy milk also buy cookies 60% of the time.•Recommender Systems"People who bought what you bought also purchased….“.•Discovering web usage patternsPeople who land on page X click on link Y 76% of the time.
+37Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Use Case Example: Credit RecordsAttributesCredit IDcredit_good, female_married, job_skilled, home_owner, …1credit_bad, male_single, job_unskilled, renter, …2SupportFrequent Itemset70%credit_good55%male_single63%job_skilled71%home_owner53%home_owner,credit_goodMinimum Support: 50%The itemset {home_owner, credit_good} has minimum support. The possible rules arecredit_good -> home_ownerandhome_owner -> credit_good
+38Module 4: Analytics Theory/Methods
+37
+38
+--- Page 20 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 20
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Computing Confidence and Lifttotalrenterhome_ownerfree_housing3007018644credit_bad70010952764credit_good179713108Suppose we have 1000 credit records:713 home_owners, 527 have good credit.home_owner -> credit_goodhas confidence 527/713 = 74%700 with good credit, 527 of them are home_ownerscredit_good -> home_owner has confidence 527/700 = 75%The lift of these two rules is0.527 / (0.700*0.713) = 1.055
+39Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+A Sketch of the Algorithm•If Lkis the set of frequent k-itemsets:Generate the candidate set Ck+1by joining Lkto itselfPrune out the (k+1)-itemsets that don't have minimum support  Now we have Lk+1•We know this catches all the frequent (k+1)-itemsets by the apriori propertya (k+1)-itemset can't be frequent if any of its subsets aren't frequent•Continue until we reach kmax, or run out of support•From the union of all the Lk, find all the rules with minimum confidence
+40Module 4: Analytics Theory/Methods
+39
+40
+--- Page 21 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 21
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Step 1: 1-itemsets (L1)•let min_support = 0.5•1000 credit records•Scan the database•PruneCountFrequent Itemset700credit_good300credit_bad550male_single92male_mar_or_wid310female631job_skilled200job_unskilled710home_owner179renter
+41Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Step 2: 2-itemsets (L2)•Join L1 to itself•Scan the database to get the counts•PruneCountFrequent Itemset402credit_good, male_single544credit_good,job_skilled527credit_good,home_owner340male_single, job_skilled408male_single, home_owner452job_skilled,home_owner
+42Module 4: Analytics Theory/Methods
+41
+42
+--- Page 22 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 22
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Step 3: 3-itemsets•We have run out of support.•Candidate rules come from L2:credit_good -> job_skilledjob_skilled -> credit_goodcredit_good -> home_ownerhome_owner -> credit_goodCountFrequent Itemset428credit_good,job_skilled, home_owner
+43Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Finally: Find Confidence RulesConfidenceCntSetCntSetRule544/700=77%544credit_good AND job_skilled700credit_goodIF credit_good THEN job_skilled527/700=75%527credit_good AND home_owner700credit_goodIF credit_good THEN home_owner544/631=86%544job_skilled AND credit_good631job_skilledIF job_skilled THEN credit_good527/710=74%527home_ownerAND credit_good710home_ownerIF home_ownerTHEN credit_goodIf we want confidence > 80%:IF job_skilled THEN credit_good
+44Module 4: Analytics Theory/Methods
+43
+44
+--- Page 23 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 23
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Diagnostics•Do the rules make sense?What does the domain expert say?•Make a "test set" from hold-out data:Enter some market baskets with a few items missing (selected at random). Can the rules determine the missing items?Remember, some of the test data may not cause a rule to fire.•Evaluate the rules by lift or leverage.Some associations may be coincidental (or obvious).
+45Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Cautions (-) Reasons to Choose (+) Requires many database scansEasy to implementExponential time complexityUses a clever observation toprune the search space•Apriori propertyCan mistakenly find spurious(or coincidental) relationships•Addressed with Lift and Leverage measures Easy to parallelizeApriori - Reasons to Choose (+) and Cautions (-)
+Module 4: Analytics Theory/Methods 46
+45
+46
+--- Page 24 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 24
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Check Your Knowledge 1.What is the Apriori property and how is it used in the Apriori algorithm?2.List three popular use cases of the Association Rules mining algorithms.3.What is the difference between Lift and Leverage. How is Lift used in evaluating the quality of rules discovered?4.Define Support and Confidence5.How do you use a “hold-out” dataset to evaluate the effectiveness of the rules generated?
+Your Thoughts?
+47Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Module 4: Advanced Analytics – Theory and MethodsDuring this lesson the following topics were covered:Association Rules miningApriori AlgorithmProminent use cases of Association Rules Support and Confidence parametersLift and LeverageDiagnostics to evaluate the effectiveness of rules generatedReasons to Choose (+) and Cautions (-) of the Apriori algorithmLesson 2: Association Rules - Summary
+Module 4: Analytics Theory/Methods 48
+47
+48
+--- Page 25 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 25
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Lab Exercise 5 - Association Rules•
+49Module 4: Analytics Theory/Methods
+This  Lab is designed to investigate and practice Association Rules.After completing the tasks in this lab you should be able to:•Use R functions for Association Rule based models
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Lab Exercise 5 - Association Rules - Workflow
+Module 4: Analytics Theory/Methods 50
+1
+ • Set the Working Directory and install the “arules”  and "arulesViz" package
+2
+ • Read in the Data for Modeling
+3
+ • Review Transaction data
+4
+ • Plot Transactions
+5
+ • Mine the Association Rules
+6
+ • Read in Groceries dataset
+7
+ • Mine the Rules for the Groceries Data
+8
+ • Extract Rules with Confidence > 0.8
+49
+50
+--- Page 26 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 26
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Module 4: Advanced Analytics – Theory and MethodsDuring this lesson the following topics are covered:•General description of regression models•Technical description of a linear regression model•Common use cases for the linear regression model•Interpretation and scoring with the linear regression  model•Diagnostics for validating the linear regression model•The Reasons to Choose (+) and Cautions (-) of the linear  regression modelLesson 3: Linear Regression
+Module 4: Analytics Theory/Methods 51
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Regression•Regression focuses on the relationship between an outcome and its input variables.Provides an estimate of the outcome based on the input values.Models how changes in the input variables affect the outcome.•The outcome can be continuous or discrete.•Possible use cases:Estimate the lifetime value (LTV) of a customer and understand what influences LTV.Estimate the probability that a loan will default and understand what leads to default.•Our approaches: linear regression and logistic regression
+52Module 4: Analytics Theory/Methods
+51
+52
+--- Page 27 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 27
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Linear Regression•Used to estimate a continuous value as a linear (additive) function of other variablesIncome as a function of years of education, age, and genderHouse sales price as function of square footage, number of bedrooms/bathrooms, and lot size•Outcomevariable is continuous.•Inputvariables can be continuous or discrete.•Model Output:A set of estimated coefficients that indicate the relative impact of each input variable on the outcomeA linear expression for estimating the outcome as a function of input variables
+53Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Linear Regression Model
+Module 4: Analytics Theory/Methods 54
+𝑦 = 𝛽଴+ 𝛽ଵ𝑥ଵ+ 𝛽ଶ𝑥ଶ+ ⋯ + 𝛽௣ିଵ𝑥௣ିଵ+𝜀 where 𝑦 is the outcome variable            𝑥௝ are the input variables, for j = 1,2,…,p−1             𝛽଴ is the value of 𝑦 when each 𝑥௝ equals zero             𝛽௝ is the change in 𝑦 based on a unit change in 𝑥௝              𝜀 ~ N(0, 𝜎ଶ) and the 𝜀’s are independent of each other𝑦 = 𝛽଴+ 𝛽଴𝑥ଵ+ 𝛽଴𝑥ଵ+ ⋯ + 𝛽௣ିଵ𝑥௣ିଵ+𝜀 
+53
+54
+--- Page 28 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 28
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Example:  Linear Regression with One Input Variable
+55
+•x1- the number of employees reporting to a manager•y - the hours per week spent in meetings by the manager
+Module 4: Analytics Theory/Methods
+𝑦 = 𝛽଴+ 𝛽ଵ𝑥ଵ+ 𝜀
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Representing Categorical Attributes•For a categorical attribute with mpossible valuesAdd m-1binary (0/1) variables to the regression modelThe remaining category is represented by setting the m-1binary variables equal to zero
+56Module 4: Analytics Theory/Methods
+  salesmfgfinanceemployeesy 43210
+Input  Variables  Possible Situation(8,1,0,0)Finance manager with 8 employees(8,0,1,0)Manufacturing manager with 8 employees(8,0,0,1)Sales manager with 8 employees(8,0,0,0)Engineering manager with 8 employees
+55
+56
+--- Page 29 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 29
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+•Choose the line that minimizes:•Provides the coefficient estimates, denoted bjFitting a Line with Ordinary Least Squares (OLS)
+57Module 4: Analytics Theory/Methods
+119.221.3ˆ xy 
+෍[𝑦௜− (𝛽଴+ 𝛽ଵ𝑥௜ଵ+ ⋯ + 𝛽௣ିଵ𝑥௜,௣ିଵ)]ଶ௡௜ୀଵ
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Interpreting the Estimated Coefficients, bj•Coefficients for numeric input variablesChange in outcome due to a unit change in input variable*Example:  b1= 2.2 Extra 2.2 hrs/wk in meetings for each additional employee managed*•Coefficients for binary input variablesRepresent the additive difference from the reference level*Example:  b2= 0.5Finance managers meet 0.5 hr/wk more than engineering managers do*•Statistical significance of each coefficientAre the coefficients significantly different from zero?For small p-values (say < 0.05), the coefficient is statistically significant* when all other input values remain the same
+58Module 4: Analytics Theory/Methods
+salesmfgfinanceemployeesy 6.09.15.02.20.4ˆ 
+57
+58
+--- Page 30 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 30
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+•Residuals Differences between the observed and estimated outcomesThe observed values of the error term, ε, in the regression modelExpressed as:•Errors are assumed to be normally distributed withA mean of zero Constant varianceDiagnostics – Examining Residuals
+59
+niforyye iii ...,2,1        
+Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Diagnostics – Plotting Residuals
+60
+Module 4: Analytics Theory/Methods
+Ideal Residual Plot
+Quadratic TrendNon-centered
+Non-constant Variance
+59
+60
+--- Page 31 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 31
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Diagnostics – Residual Normality Assumption
+61
+Module 4: Analytics Theory/Methods
+Ideal HistogramIdeal Q-Q Plot
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+TrainTrainTestD3D2D1TrainingSet #1TrainTestD3D2D1TrainDiagnostics – Using Hold-out Data•Hold-out dataTraining and testing datasetsDoes the model predict well on data it hasn't seen?•N-fold cross validationPartition the data into N groups.Holding out each group, Fit the modelCalculate the residuals on the groupEstimated prediction error is the average over all the residuals.
+62Module 4: Analytics Theory/Methods
+TestTrainD3D2D1TrainTrainingSet #2TrainingSet #3
+61
+62
+--- Page 32 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 32
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Diagnostics – Other Considerations•R2The fraction of the variability in the outcome variable explained by the fitted regression model.Attains values from 0 (poorest fit)  to 1 (perfect fit)•Identify correlated input variablesPair-wise scatterplotsSanity check the coefficientsAre the magnitudes excessively large?Do the signs make sense?•𝑹𝟐= 𝟏 − 𝑺𝑺𝒆𝒓𝒓/𝑺𝑺𝒕𝒐𝒕•~  1
+63Module 4: Analytics Theory/Methods
+𝑺𝑺𝒕𝒐𝒕=෍(𝒚 − 𝒚𝒎𝒆𝒂𝒏)𝟐𝑺𝑺𝒆𝒓𝒓=෍(𝒚 − 𝒚𝒑𝒓𝒆𝒅)𝟐
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Cautions (-)Reasons to Choose (+)Does not handle missing values wellConcise representation (the coefficients)Assumes that each variable affects the outcome linearly and additivelyVariable transformations and modeling variable interactions can alleviate thisA good idea to take the log of monetary amounts or any variable with a wide dynamic rangeRobust to redundant or correlated variables Lose some explanatory valueDoes not easily handle variables that affect the outcome in a discontinuous wayStep functionsExplanatory valueRelative impact of each variable onthe outcomeDoes not work well with categorical attributes with a lot of distinct valuesFor example, ZIP codeEasy to score dataLinear Regression - Reasons to Choose (+) and Cautions (-)
+Module 4: Analytics Theory/Methods 64
+63
+64
+--- Page 33 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 33
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Check Your Knowledge 1.How is the measure of significance used in determining the explanatory value of a driver (input variable) with linear regression models?2.Detail the challenges with categorical values in linear regression model.3.Describe N-Fold cross validation method used for diagnosing a fitted model.4.List two use cases of linear regression models.5.List and discuss two standard checks that you will perform on the coefficients derived from a linear regression model.
+Your Thoughts?
+65Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Module 4: Advanced Analytics – Theory and MethodsDuring this lesson the following topics were covered:•General description of regression models•Technical description of a linear regression model•Common use cases for the linear regression model•Interpretation and scoring with the linear regression  model•Diagnostics for validating the linear regression model•The Reasons to Choose (+) and Cautions (-) of the linear regression modelLesson 3: Linear Regression - Summary
+Module 4: Analytics Theory/Methods 66
+65
+66
+--- Page 34 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 34
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Lab Exercise 6: Linear Regression
+67Module 4: Analytics Theory/Methods
+This  Lab is designed to investigate and practice Linear Regression.After completing the tasks in this lab you should be able to:•Use R functions for Linear Regression (Ordinary Least Squares – OLS)•Predict the dependent variables based on the model•Investigate different statistical parameter tests that measure the effectiveness of the model
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Lab Exercise 6: Linear Regression - Workflow
+Module 4: Analytics Theory/Methods 68
+1
+• Set Working directory2
+• Generate random data to model3
+• Generate the OLS model4
+• Print and visualize the results5
+• Generate summary outputs6
+• Introduce a slight non-linearity7
+• Perform in-database analysis of linear regression
+67
+68
+--- Page 35 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 35
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Module 4: Advanced Analytics – Theory and MethodsDuring this lesson the following topics are covered:•Technical description of a logistic regression model•Common use cases for the logistic regression model•Interpretation and scoring with the logistic regression model•Diagnostics for validating the logistic regression model•Reasons to Choose (+) and Cautions (-) of the logistic regression modelLesson 4: Logistic Regression
+Module 4: Analytics Theory/Methods 69
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Logistic Regression•Used to estimate the probability that an event will occur as a function of other variablesThe probability that a borrower will default as a function of his credit score, income, the size of the loan, and his existing debts•Can be considered a classifier, as wellAssign the class label with the highest probability•Inputvariables can be continuous or discrete•Output: A set of coefficients that indicate the relative impact of each driver A linear expression for predicting the log-odds ratio of outcome as a function of drivers. (Binary classification case)Log-odds ratio easily converted to the probability of the outcome
+70Module 4: Analytics Theory/Methods
+69
+70
+--- Page 36 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 36
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Logistic Regression Use Cases•The preferred method for many binary classification problems:Especially if you are interested in the probability of an event, not just predicting the "yes or no“Try this first; if it fails, then try something more complicated•Binary Classification examples:The probability that a borrower will default The probability that a customer will churn•Multi-class exampleThe probability that a politician will vote yes/vote no/not show up to vote on a given bill
+71Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Logistic Regression Model - Example•Training data: default is 0/1default=1 if loan defaulted•The model will return the probability that a loan with given characteristics will default•If you only want a "yes/no" answer, you need a thresholdThe standard threshold is 0.5
+72Module 4: Analytics Theory/Methods
+71
+72
+--- Page 37 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 37
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Logistic Regression- Visualizing the ModelOverall fraction of default: ~20%Logistic regression returns a score that estimates the probability that a borrower will defaultThe graph compares the distribution of defaulters and non-defaulters as a function of the model's predicted probability, for borrowers scoring higher than 0.1Blue=defaulters
+73Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Technical Description (Binary Case)•y=1 is the case of interest: 'TRUE'•LHS is called logit(P(y=1))hence, "logistic regression"•logit(P(y=1)) is inverted by the sigmoid functionstandard packages can return probability for you•Categorical variables are expanded as with linear regression•Iterative solution to obtain coefficient estimates, denoted bj"Iteratively re-weighted least squares"
+74Module 4: Analytics Theory/Methods
+𝑙𝑛൬𝑃(𝑦=1)1−𝑃(𝑦=1)൰= 𝛽0+𝛽1𝑥1+𝛽2𝑥2…+𝛽𝑝𝑥𝑝−1 
+73
+74
+--- Page 38 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 38
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Interpreting the Estimated Coefficients, bi•Invert the logit expression:•exp(bj) tells us how the odds-ratio of y=1 changes for every unit change in xj•Example: bcreditScore= -0.69•exp(bcreditScore) = 0.5 = 1/2•for the same income, loan, and existing debt, the odds-ratio of default is halved for every point increase in credit score•Standard packages return the significance of the coefficients in the same way as in linear regression
+75Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+An Interesting Fact About Logistic Regression"The probability mass equals the counts"•If 20% of our loan risk training set defaultsThe sum of all the training set scores will be 20% of the number of training examples•If 40% of applicants with income < $50,000 defaultThe sum of all the training set scores of people in this income category will be 40% of the number of examples in this income category
+76Module 4: Analytics Theory/Methods
+75
+76
+--- Page 39 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 39
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Diagnostics•Hold-out data:Does the model predict well on data it hasn't seen?•N-fold cross-validation: Formal estimate of generalization error•"Pseudo-R2" : 1 – (deviance/null deviance)Deviance, null deviance both reported by most standard packagesThe fraction of "variance" that is explained by the modelUsed the way R2is used
+77Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Diagnostics (Cont.)•Sanity check the coefficientsDo the signs make sense? Are the coefficients excessively large?Wrong sign is an indication of correlated inputs, but doesn't necessarily affect predictive power.Excessively large coefficient magnitudes may indicate strongly correlated inputs; you may want to consider eliminating some variables, or using regularized regression techniques.Infinite magnitude coefficients could indicate a variable that strongly predicts a subset of the output (and doesn't predict well on the rest).Try a Decision Tree on that variable, to see if you should segment the data before regressing.
+78Module 4: Analytics Theory/Methods
+77
+78
+--- Page 40 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 40
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Diagnostics: ROC Curve
+Area under the curve (AUC) tells you how well the model predicts. (Ideal AUC = 1)For logistic regression, ROC(Receiver Operating  Characteristics) curve can help set classifier threshold
+79Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Diagnostics: Plot the Histograms of Scores 
+good separation
+80Module 4: Analytics Theory/Methods
+79
+80
+--- Page 41 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 41
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Cautions (-)Reasons to Choose (+)Does not handle missing values wellExplanatory value:Relative impact of each variable on the outcomein a more complicated way than linear regressionAssumes that each variable affects the log-odds of the outcome linearly and additivelyVariable transformations and modeling variable interactions can alleviate thisA good idea to take the log of monetary amounts or any variable with a wide dynamic rangeRobust with redundant variables, correlated variablesLose some explanatory valueCannot handle variables that affect the outcome in a discontinuous way.Step functionsConcise representation with thethe coefficientsDoesn't work well with discrete drivers that have a lot of distinct valuesFor example, ZIP codeEasy to score dataReturns good probability estimates of an eventPreserves the summary statistics of the training data"The probabilities equal the counts"Logistic Regression - Reasons to Choose (+) and   Cautions (-)
+Module 4: Analytics Theory/Methods 81
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Check Your Knowledge 1.What is a logit and how do we compute class probabilities from the logit?  2.How is ROC curve used to diagnose the effectiveness of the logistic regression model?3.What is Pseudo R2  and what does it measure in a logistic regression model?4.How do you describe a binary class problem?5.Compare and contrast linear and logistic regression methods.
+Your Thoughts?
+82Module 4: Analytics Theory/Methods
+81
+82
+--- Page 42 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 42
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Module 4: Advanced Analytics – Theory and MethodsDuring this lesson the following topics were covered:•Technical description of a logistic regression model•Common use cases for the logistic regression model•Interpretation and scoring with the logistic regression model•Diagnostics for validating the logistic regression model•Reasons to Choose (+) and Cautions (-) of the logistic regression modelLesson 4: Logistic Regression - Summary
+Module 4: Analytics Theory/Methods 83
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Lab Exercise 7: Logistic Regression
+84Module 4: Analytics Theory/Methods
+This  Lab is designed to investigate and practice Logistic Regression.After completing the tasks in this lab you should be able to:•Use R functions for Logistic Regression – (also known as Logit)•Predict the dependent variables based on the model•Investigate different statistical parameter tests that measure the effectiveness of the model
+83
+84
+--- Page 43 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 43
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Lab Exercise 7: Logistic Regression - Workflow
+Module 4: Analytics Theory/Methods 85
+1
+• Define the problem and review input data2
+• Set the Working Directory3
+• Read in and examine the data4
+• Build and review logistic regression model5
+• Review  the results and interpret the coefficients6
+• Visualize the model using the Plot function7
+• Use Relevel function to re-level the Price factor with value 30 as the base reference8
+• Plot the ROC curve9
+• Predict Outcome given Age and Income10
+• Predict outcome for a sequence of Age values at price 30 and mean income11
+• Predict outcome for a sequence of income at price 30 and mean age12
+• Use logistic regression as a classifier
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Module 4: Advanced Analytics – Theory and MethodsDuring this lesson the following topics are covered:•Naïve Bayesian Classifier•Theoretical foundations of the classifier•Use cases•Evaluating the effectiveness of the classifier•The Reasons to Choose (+) and Cautions (-) with the use of the classifierLesson 5: Naïve Bayesian Classifiers
+Module 4: Analytics Theory/Methods 86
+85
+86
+--- Page 44 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 44
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Classifiers•Classification: assign labels to objects.•Usually supervised: training set of pre-classified examples.•Our examples:Naïve BayesianDecision Trees (and Logistic Regression)
+Module 4: Analytics Theory/Methods 87
+Where in the catalog should I place this product listing? Is this email spam?Is this politician Democrat/Republican/Green?
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Naïve Bayesian Classifier•Determine the most probable class label for each object Based on the observed object attributesNaïvely assumed to be conditionally independent of each other Example: Based on the objects attributes {shape, color, weight}A given object that is {spherical, yellow, < 60 grams},may be classified (labeled) as a tennis ballClass label probabilities are determined using Bayes’ Law•Inputvariables are discrete•Output: Probability score – proportional to the true probabilityClass label – based on the highest probability score
+88Module 4: Analytics Theory/Methods
+87
+88
+--- Page 45 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 45
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Naïve Bayesian Classifier - Use Cases•Preferred method for many text classification problems.Try this first; if it doesn't work, try something more complicated•Use casesSpam filtering, other text classification tasksFraud detection•https://en.wikipedia.org/wiki/Naive_Bayes_spam_filtering•https://eprints.soton.ac.uk/268483/•https://convo.co.uk/
+89Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Building a Training Dataset to Predict Good or Bad Credit
+90Module 4: Analytics Theory/Methods
+•Predict the credit behavior of a credit card applicant from applicant's attributes:Personal statusJob typeHousing typeSavings amount•These are all categorical variables and are better suited to Naïve Bayesian Classifier than to logistic regression.
+89
+90
+--- Page 46 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 46
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Technical Description - Bayes' Law•C is the class label:C ϵ {C1, C2, … Cn}•A is the observed object attributesA = (a1, a2, … am)•P(C | A) is the probability of C given A is observedCalled the conditional probability
+91Module 4: Analytics Theory/Methods
+P(A)
+P(C)C)|P(A
+P(A)
+C)P(AA)|P(C 
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+ 92Module 4: Analytics Theory/Methods
+He has determined that, if he checks in for his flight at least two hours early, theprobability that he will get the upgrade is .75; otherwise, the probability that he willget the upgrade is .35. With his busy schedule, he checks in at least two hours beforehis flight only 40% of the time. Suppose John didn’t receive an upgrade on his mostrecent attempt. What is the probability that he arrived late?C = John arrives lateA = John did not receive an upgrade P(C) = Probability John arrives late = .6P(A) = Probability John did not receive an upgrade =  1 – ( .4 x .75 + .6 x .35)  = 1 -.51 = .49 P(A|C) = Probability that John did not receive an upgrade given that he arrived late = 1 - .35 = .65P(C|A) = Probability that John arrived late given that he did not receive his upgrade = P(A|C)P(C)/P(A) = (.65 x .6)/.49 = .7959 ~ 0.80 (approx)An example using Bayes Law:
+91
+92
+--- Page 47 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 47
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+ 93Module 4: Analytics Theory/Methods
+Let us assume that a disease exists and a test for it has been developed.We know the following probabilities:P(C) = probability of having the disease = .05                          P(¬C)  = probability of not having the disease = .95P(A|C) = probability of testing positive, if having the disease = .95P(A|¬C)  = probability of testing positive, if not having the disease = .1In order to find if this a reliable test, we need to solve for the probability of having the disease given you have a positive test result, P(C|A).   From Bayes’ Law, P(C|A) =  P(A|C) P(C) / P(A).  We need to compute P(A).P(A) = probability of testing positive  = P(C) * P(A|C) + P(¬C)  * P(A|¬C) = .05 * .95 + .95 * .1 = 0.1425 •So, P(C|A) = P(A|C) P(C) / P(A) = (.95  * .05) / 0.1425 = 1/3, which means that the probability of a patient having the disease given that the patient tested positive is only one third.  This may not be a good test!Asecondexample ofBayes Law:
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+ 94Module 4: Analytics Theory/Methods
+Illustrating with hard numbers, lets fill the following test / disease matrix for a population of 10,000 patients.Have Disease             Do not have Disease           TotalsTest positive     10000 *  (.05*.95)          10000 * (.95*.1)475                                   950                           1425Test negative    10000 *  (.05*.05)          10000 * (.95*.9)          25                                   8550                         8575             Asecondexample ofBayes Law:475 / 1425 = 1 / 3
+93
+94
+--- Page 48 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 48
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Technical Description - Bayes' Law•C is the class label:C ε {C1, C2, … Cn}•A is the observed object attributesA = (a1, a2, … am)•P(C | A) is the probability of C given A is observedCalled the conditional probability
+95Module 4: Analytics Theory/Methods
+P(A)
+P(C)C)|P(A
+P(A)
+C)P(AA)|P(C 
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+•For observed attributes A = (a1, a2, … am), we want to computeand assign the classifier, Ci, with the largest P(Ci|A) •Two simplifications to the calculationsApply naïve assumption - each aj is conditionally independent of each other, thenDenominator P(a1,a2,…am) is a constant and can be ignored
+n2,..., 1,i     )a,...,a,P(a
+)P(C)C|a,...,a,P(aA)|P(C
+m21
+iim21
+i 
+Apply the Naïve Assumption and Remove a Constant 
+96Module 4: Analytics Theory/Methods
+
+
+
+m
+j
+ijimiiim CaPCaPCaPCaPCaaaP
+1
+2121 )|()|()|()|()|,...,,( 
+95
+96
+--- Page 49 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 49
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Building a Naïve Bayesian Classifier•Applying the two simplifications•To build a Naïve Bayesian Classifier, collect the following statistics from the training data:P(Ci) for all the class labels.P(aj| Ci) for all possible ajand CiAssign the classifier label, Ci, that maximizes the value of
+97Module 4: Analytics Theory/Methods
+niCPCaPaaaCP i
+m
+j
+ijmi  ,...,2 ,1      )()|(),...,,|(
+1
+21 
+
+
+
+
+ 
+
+niCPCaP i
+m
+j
+ij  ,...,2 ,1      )()|(
+1
+
+
+
+
+
+
+
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Naïve Bayesian Classifiers for the Credit Example•Class labels: {good, bad}P(good) = 0.7P(bad)   = 0.3•Conditional ProbabilitiesP(own|bad)   = 0.62P(own|good) = 0.75P(rent|bad)    = 0.23P(rent|good)  = 0.14… and so on
+98Module 4: Analytics Theory/Methods
+Pbad= 8 / 27 = 0.30Pgood= 19 / 27 = 0.70P(own|good)=P(own (int) good)/P(good)= (   13 / 27)  /  (19 / 27)) =  13/19 = here 68%There are 1000 samples available, only 28 samples are shown here…
+97
+98
+--- Page 50 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 50
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Naïve Bayesian Classifier for a Particular Applicant•Given applicant attributes ofA= {female single, owns home, self-employed,savings > $1000}•Since P(good|A) > (bad|A), assign the applicant  the label "good"  creditP(aj| Ci)Ciaj
+0.28goodfemale single0.36badfemale single0.75goodown0.62badown0.14goodself emp0.17badself emp0.06goodsavings>1K0.02badsavings>1KP(good|A) ~ (0.28*0.75*0.14*0.06)*0.7 = 0.0012P(bad|A)   ~ (0.36*0.62*0.17*0.02)*0.3 = 0.0002
+99Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Naïve Bayesian Implementation Considerations•Numerical underflowResulting from multiplying several  probabilities near zeroPreventable by computing the logarithm of the products•Zero probabilities due to unobserved attribute/classifier pairsResulting from rare eventsHandled by smoothing (adjusting each probability by a small amount)•Assign the classifier label, Ci, that maximizes the value of
+100Module 4: Analytics Theory/Methods
+     )(log)|(log
+1
+i
+m
+j
+ij CPCaP 
+
+
+
+
+ 
+
+where i = 1,2,…,n andP’denotes the adjusted probabilities
+99
+100
+--- Page 51 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 51
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Diagnostics•Hold-out  dataHow well does the model classify new instances?•Cross-validation•ROC curve/AUC
+101Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+PredictionbadgoodActual Class70029671good30026238bad1000291709Diagnostics: Confusion MatrixOverall success rate (or accuracy): (TP + TN) / (TP+TN+FP+FN) = (671+262)/1000 ≈ 0.93 TPR: TP / (TP + FN) = 671 / (671+29) = 671/700 ≈ 0.96FPR: FP / (FP + TN) = 38 / (38 + 262) = 38/300 ≈ 0.13FNR: FN / (TP + FN) = 29 / (671 + 29) = 29/700 ≈ 0.04Precision: TP/ (TP + FP) = 671/709 ≈ 0.95Recall (or TPR): TP / (TP + FN) ≈ 0.96      false negatives (FN)false positives (FP)
+102Module 4: Analytics Theory/Methods
+true positives (TP)true negatives (TN)
+101
+102
+--- Page 52 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 52
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Cautions (-)Reasons to Choose (+)Numeric variables have to be discrete (categorized) IntervalsHandles missing values quite wellSensitive to correlated variables"Double-counting"Robust to irrelevant variablesNot good for estimating probabilitiesStick to class label or yes/noEasy to implementEasy to score dataResistant to over-fittingComputationally efficientHandles very high dimensionalproblemsHandles categorical variables with alot of levelsNaïve Bayesian Classifier - Reasons to Choose (+)and Cautions (-)
+Module 4: Analytics Theory/Methods 103
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Check Your Knowledge 1. Consider the following Training Data Set:•Apply the Naïve  Bayesian Classifier to this                                                     data set and compute  the probabilityscore for P(y = 1|X)  for X = (1,0,0)  Show your work2. List some prominent use cases of the Naïve Bayesian Classifier.3. What gives the Naïve Bayesian Classifier the advantage of being computationally inexpensive?4. Why should we use log-likelihoods rather than pure probability values in the Naïve Bayesian Classifier?X1 X2 X3 Y1 1 1 01 1 0 00 0 0 00 1 0 11 0 1 10 1 1 1Training Data Set
+Your Thoughts?
+104Module 4: Analytics Theory/Methods
+103
+104
+--- Page 53 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 53
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Check Your Knowledge (Continued)5. What is a confusion matrix and how it is used to evaluate the effectiveness of the model?6. Consider the following data set with two input features temperature and season•What is the Naïve Bayesian assumption? •Is the Naïve Bayesian assumption satisfied for this problem?
+Your Thoughts?
+105Module 4: Analytics Theory/Methods
+Temperature Season Electricty Usage-10 to 50 F Winter High50 to 70 F Winter Low70 to 85 F Summer Low85 to 110 F Summer High
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Module 4: Advanced Analytics – Theory and MethodsDuring this lesson the following topics were covered:•Naïve Bayesian Classifier•Theoretical foundations of the classifier•Use cases•Evaluating the effectiveness of the classifier•The Reasons to Choose (+) and Cautions (-) with the use of the classifierLesson 5: Naïve Bayesian Classifiers - Summary
+Module 4: Analytics Theory/Methods 106
+105
+106
+--- Page 54 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 54
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Lab Exercise 8: Naïve Bayesian Classifier
+107Module 4: Analytics Theory/Methods
+This  Lab is designed to investigate and practice the Naïve Bayesian Classifier analytic technique.After completing the tasks in this lab you should be able to:•Use R functions for Naïve Bayesian Classification•Apply the requirements for generating appropriate training data•Validate the effectiveness of the Naïve Bayesian Classifier with the big data
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Lab Exercise 8: Naïve Bayesian Classifier Part1 - Workflow
+Module 4: Analytics Theory/Methods 108
+1
+• Set working directory and review training and test data2
+• Install and load library “e1071”3
+• Read in and review data4
+• Build the Naïve Bayesian classifier model from first principles5
+• Predict the results6
+• Use the naiveBayes function7
+• Predict the Outcome of “Enrolls” with the test data8
+• Use the Laplace smoothing
+107
+108
+--- Page 55 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 55
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Lab Exercise 8: Naïve Bayesian Classifier Part2 - Workflow
+Module 4: Analytics Theory/Methods 109
+1
+• Define the problem (Translating to an Analytics Question)2
+• Open the ODBC connection3
+• Build the training dataset and the test dataset from the database4
+• Extract the first 10000 records for the training data set and the remaining 10 for the test5
+• Execute the NB classifier6
+• Validate the effectiveness of the NB classifier with a confusion matrix7
+• Execute NB classifier with MADlib function calls within the database
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Module 4: Advanced Analytics – Theory and MethodsDuring this lesson the following topics are covered:•Overview of Decision Tree classifier•General algorithm for Decision Trees•Decision Tree use cases•Entropy, Information gain•Reasons to Choose (+) and Cautions (-) of Decision Tree classifier•Classifier methods and conditions in which they are best suited Lesson 6: Decision Trees
+Module 4: Analytics Theory/Methods 110
+109
+110
+--- Page 56 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 56
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Decision Tree
+111Module 4: Analytics Theory/Methods
+Decision Trees are a flexible method very commonly deployed in data miningapplications. In this lesson we will focus on Decision Trees used forclassification problems.There are two types of trees; Classification Trees and Regression (orPrediction) Trees• Classification Trees – are used to segment observations into morehomogenous groups (assign class labels). They usually apply to outcomesthat are binary or categorical in nature.•Regression Trees– are variations of regression and what is returned ineach node is the average value at each node (type of a step function withwhich the average value can be computed). Regression trees can beapplied to outcomes that are continuous (like account spend or personalincome).
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Decision Tree Classifier - What is it?•Used for classification:Returns probability scores of class membershipWell-calibrated, like logistic regressionAssigns label based on highest scoring classSome Decision Tree algorithms return simply the most likely classRegression Trees: a variation for regressionReturns average value at every nodePredictions can be discontinuous at the decision boundaries•Inputvariables can be continuous or discrete•Output: A tree that describes the decision flow. Leaf nodesreturn either a probability score, or simply a classification.Trees can be converted to a set of "decision rules“"IF income < $50,000 AND mortgage_amt > $100K THEN default=T with 75% probability“
+112Module 4: Analytics Theory/Methods
+111
+112
+--- Page 57 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 57
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Decision Tree
+113Module 4: Analytics Theory/Methods
+Decision Trees are a popular method because they can beapplied to a variety of situations.The rules of classification are very straight forward and theresults can easily be presented visually.Additionally, because the end result isa series of logical “if-then” statements, there is no underlying assumption of alinear (or non-linear) relationship between the predictorvariables and the dependent variable.
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Decision Tree – Example of Visual StructureGenderIncome AgeYes NoYes No
+MaleFemale
+<=40 >40>45,000<=45,000
+Internal Node –decision on variableLeaf Node –class label Branch –outcome of testIncomeAgeFemaleMale
+114Module 4: Analytics Theory/Methods
+113
+114
+--- Page 58 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 58
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Decision Tree Classifier - Use Cases•When a series of questions (yes/no) are answered to arrive at a classificationBiological species classificationChecklist of symptoms during a doctor’s evaluation of a patient•When “if-then” conditions are preferred to linear models.Customer segmentation to predict response ratesFinancial decisions such as loan approvalFraud detection•Short Decision Trees are the most popular "weak learner" in ensemble learning techniques
+115Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Example: The Credit Prediction Problemsavings=(500:1000), >=1000,no known savingspersonal=female, male div/seppersonal=male mar/wid, male singlehousing=free, renthousing=own700/1000p(good)=0.70245/294p(good)=0.83349/501p(good)=0.7070/117p(good)=0.6036/88p(good) = 0.41savings= <100, (100:500)
+116Module 4: Analytics Theory/Methods
+115
+116
+--- Page 59 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 59
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Example: The Credit Prediction Problem
+117Module 4: Analytics Theory/Methods
+We will use the same example we used in the previous lessonwith Naïve Bayesian classifier.For the people with good credit and we start at the top of thetree the probability is 70% (700 out of 1000 people have goodcredit). The process has decided that we are going to split howmuch is in the savings account into two groups.One group with savings less than $100 or between $100 to $500.The second group is the rest of the population which hassavings of $500 to $1000 or greater than $1000 or no knownsavings.
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Example: The Credit Prediction Problem
+savings=(500:1000), >=1000,no known savingspersonal=female, male div/seppersonal=male mar/wid, male singlehousing=free, renthousing=own700/1000p(good)=0.70245/294p(good)=0.83349/501p(good)=0.7070/117p(good)=0.6036/88p(good) = 0.41savings= <100, (100:500)
+118Module 4: Analytics Theory/Methods
+117
+118
+--- Page 60 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 60
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Example: The Credit Prediction Problem
+119Module 4: Analytics Theory/Methods
+We compute the probability of good credit at the second nodeand we find in the second savings category 245 out of 294 havegood creditand the probability at this node is83%.Looking at the other node (Savings <100 or Savings 100:500)we look into housing. We split this node into Housing (free,rent)as one group and Housing (own) as the other. Computingprobability of good credit at housing (own) node we see that 349out of 501 people have good credit, a70%probability.
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Example: The Credit Prediction Problem
+savings=(500:1000), >=1000,no known savingspersonal=female, male div/seppersonal=male mar/wid, male singlehousing=free, renthousing=own700/1000p(good)=0.70245/294p(good)=0.83349/501p(good)=0.7070/117p(good)=0.6036/88p(good) = 0.41savings= <100, (100:500)
+120Module 4: Analytics Theory/Methods
+119
+120
+--- Page 61 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 61
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Example: The Credit Prediction Problem
+121Module 4: Analytics Theory/Methods
+Traversing down the housing (free, rent) node we split now onthe variable known as personal. The two groups are Personal(female, male divorced/ separated) and Personal(male,married/widowed,male_single). In the node on the right,the probability of good credit is 0.6; in the node on the left, theprobability of good credit is 41% (which is less than 50%, so wehave shaded this box red).
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Example: The Credit Prediction Problem
+savings=(500:1000), >=1000,no known savingspersonal=female, male div/seppersonal=male mar/wid, male singlehousing=free, renthousing=own700/1000p(good)=0.70245/294p(good)=0.83349/501p(good)=0.7070/117p(good)=0.6036/88p(good) = 0.41savings= <100, (100:500)
+122Module 4: Analytics Theory/Methods
+121
+122
+--- Page 62 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 62
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Example: The Credit Prediction Problem
+123Module 4: Analytics Theory/Methods
+We can see that for this case, we might want to work with theprobabilities, rather than the class labels; this tree would onlylabel 88 rows (out of 1000) of the training set as "bad", which isfar less than the 30% "bad" rate of the training set, and of thosecases labeled "bad", only 59% of them would truly be bad.Tuning the splitting parameters, or using arandom forestorother ensemble technique (more on that later) might improve theperformance.
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Example: The Credit Prediction Problem
+124Module 4: Analytics Theory/Methods
+Decision Trees are greedy algorithms. They take decisionsbased on what is available at that moment and once a baddecision is taken it is propagated all the way down.An ensemble technique may randomize the splitting (or evenrandomize data) and come up with multiple tree structures. Itthen assigns labels by looking at the average of the nodes in allthe trees and assigns class labels or probability values.
+123
+124
+--- Page 63 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 63
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+General Algorithm•To construct tree T from training set SIf all examples in S belong to some class  in C, or S is sufficiently "pure", then make a leaf labeled C.Otherwise: select the “most informative” attribute A partition S according to A’s valuesrecursively construct sub-trees T1, T2, ..., for the subsets of S•The details vary according to the specific algorithm – CART, ID3, C4.5 – but the general idea is the same
+125Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Step 1: Pick the Most “Informative" Attribute•Entropy-based methods are one common way•H = 0 if p(c) = 0 or 1 for any classSo for binary classification, H=0 is a "pure" node•H is maximum when all classes are equally probableFor binary classification, H=1 when classes are 50/50
+126Module 4: Analytics Theory/Methods
+125
+126
+--- Page 64 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 64
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Step 1: Pick the most "informative" attribute (Continued)•First, we need to get the base entropy of the data
+127Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Step 1: Pick the Most “Informative" Attribute (Continued) Conditional Entropy•The weighted sum of the class entropies for each value of the attribute•In English: attribute values (home owner vs. renter) give more information about class membership"Home owners are more likely to have good credit than renters"•Conditional entropy should be lower than unconditioned entropy
+128Module 4: Analytics Theory/Methods
+127
+128
+--- Page 65 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 65
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Conditional Entropy Examplerentownfor  free0.1790.7130.108P(housing)0.3910.2610.407P(bad | housing)0.6010.7390.592p(good | housing)
+129Module 4: Analytics Theory/Methods
+Let's compute the conditional entropy of credit class conditioned on housing status. In the top row of the table are the probabilities of each value. In the next two rows are the probabilities of the class labels conditioned on the housing value.Note that each term inside parentheses is the entropy of the class labels within a single housing value.The conditional entropy is still fairly high; but it is a little less than the unconditioned entropy.
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Step 1: Pick the Most “Informative" Attribute (Continued) Information Gain•The information that you gain, by knowing the value of an attribute•So the "most informative" attribute is the attribute with the highest InfoGain
+130Module 4: Analytics Theory/Methods
+129
+130
+--- Page 66 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 66
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Back to the Credit Prediction ExampleInfoGainAttribute0.001job0.013housing0.006personal_status0.028savings_status
+131Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+savings= <100, (100:500)savings=(500:1000),>=1000,no known savings700/1000p(good)=0.7245/294p(good)=0.83Step 2 & 3: Partition on the Selected Variable•Step 2: Find the partition with the highest InfoGain In our example the selected partition has InfoGain = 0.028•Step 3: At each resulting node, repeat Steps 1 and 2until node is "pure enough"•Pure nodes => no information gain by splitting on other attributes
+132Module 4: Analytics Theory/Methods
+131
+132
+--- Page 67 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 67
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Diagnostics•Hold-out data•ROC/AUC•Confusion Matrix•FPR/FNR, Precision/Recall •Do the splits (or the "rules") make sense?What does the domain expert say?•How deep is the tree?Too many layers are prone to over-fit•Do you get nodes with very few members?Over-fit
+133Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Cautions (-)Reasons to Choose (+)Decision surfaces can only be axis-alignedTakes any input type (numeric, categorical)In principle, can handle categorical variables with many distinct values (ZIP code)Tree structure is sensitive to small changes in the training dataRobust with redundant variables, correlated variablesA "deep" tree is probably over-fit Because each split reduces the training data for subsequent splitsNaturally handles variable interactionNot good for outcomes that are dependent on many variablesRelated to over-fit problem, aboveHandles variables that have non-linear effect on outcomeDoesn't naturally handle missing values;However most implementations include a method for dealing with thisComputationally efficient to buildIn practice, decision rules can be fairly complexEasy to score dataMany algorithms can return a measure of variable importanceIn principle, decision rules are easy to understandDecision Tree Classifier - Reasons to Choose (+) & Cautions (-)
+Module 4: Analytics Theory/Methods 134
+133
+134
+--- Page 68 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 68
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Cautions (-)Reasons to Choose (+)Decision surfaces can only be axis-alignedTakes any input type (numeric, categorical)In principle, can handle categorical variables with many distinct values (ZIP code)Tree structure is sensitive to small changes in the training dataRobust with redundant variables, correlated variablesA "deep" tree is probably over-fit because each split reduces the training data for subsequent splitsNaturally handles variable interactionNot good for outcomes that are dependent on many variables (Related to over-fit problem, above)Handles variables that have non-linear effect on outcomeDoesn't naturally handle missing values;However most implementations include a method for dealing with thisComputationally efficient to buildIn practice, decision rules can be fairly complexEasy to score dataMany algorithms can return a measure of variable importanceIn principle, decision rules are easy to understandDecision Tree Classifier - Reasons to Choose (+) & Cautions (-)  (Continued)
+Module 4: Analytics Theory/Methods 135
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Recommended MethodTypical QuestionsLogistic regressionDecision TreeDo I want class probabilities, rather than just class labels?Logistic regressionDecision TreeDo I want insight into how the variables affect the model?Naïve BayesIs the problem high-dimensional?Decision TreeLogistic RegressionDo I suspect some of the inputs are correlated?Decision TreeNaïve BayesDo I suspect some of the inputs are irrelevant?Naïve BayesDecision TreeAre there categorical variables with a large number of levels?Decision TreeLogistic RegressionAre there mixed variable types?Decision TreeIs there non-linear data or discontinuities in the inputs  that will affect the outputs?Which Classifier Should I Try?
+Module 4: Analytics Theory/Methods 136
+135
+136
+--- Page 69 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 69
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Check Your Knowledge 1.How do you define information gain?2.For what conditions is the value of entropy at a maximum and when is it at a minimum?3.List three use cases of Decision Trees.4.What are weak learners and how are they used in ensemble methods?5.Why do we end up with an over fitted model with deep trees and in data sets when we have outcomes that are dependent on many variables?6.What classification method would you recommend for the following cases:High dimensional dataData in which outputs are affected by non-linearity and discontinuity in the inputs
+Your Thoughts?
+137Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Module 4: Advanced Analytics – Theory and MethodsDuring this lesson the following topics were covered:•Overview of Decision Tree classifier•General algorithm for Decision Trees•Decision Tree use cases•Entropy, Information gain•Reasons to Choose (+) and Cautions (-) of Decision Tree classifier•Classifier methods and conditions in which they are best suited Lesson 6: Decision Trees - Summary
+Module 4: Analytics Theory/Methods 138
+137
+138
+--- Page 70 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 70
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Lab Exercise 9: Decision Trees
+139Module 4: Analytics Theory/Methods
+This lab is designed to investigate and practice Decision Tree models covered in the course work.After completing the tasks in this lab you should be able to:•Use R functions for Decision Tree models•Predict the outcome of an attribute based on the model
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Lab Exercise 9: Decision Trees - Workflow
+Module 4: Analytics Theory/Methods 140
+1
+• Set the Working Directory2
+• Read in the Data3
+• Build the Decision Tree4
+• Plot the Decision Tree5
+• Prepare Data to Test the Fitted Model6
+• Predict a Decision from the Fitted Model
+139
+140
+--- Page 71 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 71
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Module 4: Advanced Analytics – Theory and MethodsDuring this lesson the following topics are covered:•Time Series Analysis and its applications in forecasting•ARMA and ARIMA Models•Implementing the Box-Jenkins Methodology using R•Reasons to Choose (+) and Cautions (-) with Time Series AnalysisLesson 7: Time Series Analysis
+Module 4: Analytics Theory/Methods 141
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Time Series AnalysisBusinesses perform sales forecasting to look ahead in order to plantheir investments, launch new products, decide when to close orwithdraw products, etc.The sales forecasting process is a critical one for most businesses.Part of the sales forecasting process is to examine the past. How welldid we do in the last few months or what were our sales in the sametime period for the last few years?Time Series Analysis provides a scientific methodology for salesforecasting.Time Series Analysisis the analysis of sequential dataacross equally spaced units of time. Time Series is a basic researchmethodology in which data for one or more variables are collectedfor many observations at different time periods.
+142Module 4: Analytics Theory/Methods
+141
+142
+--- Page 72 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 72
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Time Series AnalysisThe main objectives in Time Series Analysis are:•To understand the underlying structure of the time series by breaking it down to its components.•Fit a mathematical model and then proceed to forecast the futureThe time periods are usually regularly spaced and the observationsmay be either univariate or multivariate.Univariatetime series arethose where only one variable is measured over time, whereasmultivariate time series are those, where multiple variables aremeasured simultaneously. The internal structure of the data mayspecify a trend, seasonality, cycles or random.
+143Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Time Series Analysis•Time Series: Ordered sequence of equally spaced values over time•Time Series Analysis:  Accounts for the internal structure of observations taken over timeTrend – long term movement in a time seriesSeasonality – dependent on the time of the yearCycles – non-seasonal natureRandom – or chaotic values left over when other components of the series have been accounted for.•GoalsTo identify the internal structure of the time seriesTo forecast future eventsExample: Based on sales history, what will next December sales be?•Method:  Box-Jenkins (ARMA – Auto Regressive Moving Averages)
+144Module 4: Analytics Theory/Methods
+143
+144
+--- Page 73 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 73
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Time Series Analysis (Continued)•Time Series: Ordered sequence of equally spaced values over time•Time Series Analysis:  Accounts for the internal structure of observations taken over timeTrendSeasonalityCyclesRandom•GoalsTo identify the internal structure of the time seriesTo forecast future eventsExample: Based on sales history, what will next December sales be?•Method:  Box-Jenkins (ARMA)
+145Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+•Models historical behavior to forecast the future•Applies ARMA (Autoregressive Moving Averages)Input: Time SeriesAccounting for Trends and Seasonality componentsOutput: Expected future value of the time seriesBox-Jenkins Method: What is it?
+146Module 4: Analytics Theory/Methods
+145
+146
+--- Page 74 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 74
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Use CasesForecast:•Next month's sales•Tomorrow's stock price•Hourly power demand•Economics/Finance•Sociology•Epidemiology:SARS/MERS/COVID-19
+147Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Modeling a Time Series•Let's model the time series as Yt=Tt+St+Rt,       t=1,...,n.•Tt: Trend termAir travel steadily increased over the last few years•St: The seasonal termAir travel fluctuates in a regular pattern over the course of a year•Rt: Random componentTo be modeled with ARMA
+148Module 4: Analytics Theory/Methods
+147
+148
+--- Page 75 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 75
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Stationary Sequences•Box-Jenkins methodology assumes the random component is a stationary sequence Constant meanConstant variance Autocorrelation does not change over timeConstant correlation of a variable with itself at different times•In practice, to obtain a stationary sequence,  the data must be: De-trendedSeasonally adjusted
+149Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+De-trending•In this example, we see a linear trend, so we fit a linear modelTt= m·t + b•The de-trended series is then Y1t= Yt– Tt•In some cases, may have to fit a non-linear modelQuadraticExponential
+150Module 4: Analytics Theory/Methods
+149
+150
+--- Page 76 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 76
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Seasonal Adjustment•Plotting the de-trended series identifies seasonsFor CO2 concentration, we can model the period as being a year, with variation at the month level•Simple ad-hoc adjustment: take several years of data, calculate the average value for each month, and subtract that from Y1tY2t= Y1t– St
+151Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+ARMA(p, q) Model –Auto Regressive Moving Averages•The simplest Box-Jenkins ModelYtis de-trended and seasonally adjusted•Combination of two process modelsAutoregressive: Ytis a linear combination of its last pvaluesMoving average: Ytis a constant value plus the effects of a dampened white noise process over the last q time values (lags)
+152Module 4: Analytics Theory/Methods
+151
+152
+--- Page 77 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 77
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+ARIMA(p, d, q) Model -Auto Regressive Integrated Moving Averages•ARIMA adds a differencing term, d, to the ARMA modelAutoregressive Integrated Moving AverageIncludes the de-trending as part of the modellinear trend can be removed by d=1quadratic trend by d=2and so on for higher order trends•The general non-seasonal model is known as ARIMA (p, d, q):pis the number of autoregressive termsdis the number of differencesqis the number of moving average terms
+153Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+ACF & PACF•Auto Correlation Function (ACF)Correlation of the values of the time series with itselfAutocorrelation "carries over"Helps to determine the order, q, of a MA modelWhere does ACF go to zero?•Partial Auto Correlation Function (PACF)An autocorrelation calculated after removing the linear dependence of the previous termsHelps to determine the order, p,  of an AR modelWhere does PACF go to zero?
+154Module 4: Analytics Theory/Methods
+153
+154
+--- Page 78 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 78
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Model Selection•Based on the data, the Data Scientist selects p, dand qAn "art form" that requires domain knowledge, modeling experience, and a few iterationsUse a simple model when possibleAR model  (q = 0)MA model (p = 0)•Multiple models need to be built and comparedUsing ACF and PACF
+155Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Cautions (-)Reasons to Choose (+)No meaningful drivers: prediction based only on past performanceNo explanatory valueCan't do "what-if" scenariosCan't stress testMinimal data collectionOnly have to collect the series itselfDo not need to input driversIt's an "art form" to select appropriate parametersDesigned to handle the inherent autocorrelation of lagged time seriesOnly suitable for short term predictionsAccounts for trends and seasonalityTime Series Analysis - Reasons to Choose (+) & Cautions (-)
+Module 4: Analytics Theory/Methods 156
+155
+156
+--- Page 79 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 79
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Time Series Analysis with RImportant R functions and commands we will be using are listed here.•The function “ts” is used to create time series objectsmydata<- ts(mydata,start=c(1999,1),frequency=12)•Visualize dataplot(mydata)•De-trend using differencing diff(mydata)•Examine ACF and PACFacf(mydata): It computes and plots estimates of the autocorrelations pacf(mydata): It computes and plots estimates of the partial autocorrelations
+157Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Other Useful R Functions in Time Series Analysis •ar(): Fit an autoregressive time series model to the data•arima(): Fit an ARIMA model•predict(): Makes predictions“predict”is a generic function for predictions from the results of various model fitting functions.  The function invokes particular methods which depend on the classof the first argument•arima.sim(): Simulate a time series from an ARIMA model•decompose(): Decompose a time series into seasonal, trend and irregular components using moving averagesDeals with additive or multiplicative seasonal component•stl():  Decompose a time series into seasonal, trend and irregular components using loess
+158Module 4: Analytics Theory/Methods
+157
+158
+--- Page 80 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 80
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Check Your Knowledge 1.What is a time series and what are the key components of a time series?2.How do we “de-trend” a time series data?3.What makes data stationary?4.How is seasonality removed from the data?5.What are the modeling parameters in ARIMA?6.How do you use ACF and PACF to determine the “stationarity” of  time series data?
+Your Thoughts?
+159Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Module 4: Advanced Analytics – Theory and MethodsDuring this lesson the following topics were covered:•Time Series Analysis and its applications in forecasting•ARMA and ARIMA Models•Implementing the Box-Jenkins Methodology using R•Reasons to Choose (+) and Cautions (-) with Time Series AnalysisLesson 7: Time Series Analysis - Summary
+Module 4: Analytics Theory/Methods 160
+159
+160
+--- Page 81 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 81
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Lab Exercise 10: Time Series Analysis
+161Module 4: Analytics Theory/Methods
+This  Lab is designed to investigate and practice Time Series Analysis with ARIMA models (Box-Jenkins-methodology).After completing the tasks in this lab you should be able to:•Use R functions for ARIMA models•Apply the requirements for generating appropriate training data•Validate the effectiveness of the ARIMA models
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Lab Exercise 10: Time Series Analysis - Workflow
+Module 4: Analytics Theory/Methods 162
+1
+• Set the Working Directory2
+• Open Connection to Database3
+• Get Data from the Database4
+• Import the Table5
+• Review, Update, and Prepare DataFrame ”msales” File for ARIMA  Modeling6
+• Convert “sales” into Time Series Object7
+• Plot the Time Series8
+• Analyze the ACF and PACF9
+• Difference the Data to Make it Stationary10
+• Plot ACF and PACF for the Differenced Data11
+• Fit the ARIMA Model12
+• Generate Predictions13
+• Compare Predicted Values with Actual Values
+161
+162
+--- Page 82 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 82
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Module 4: Advanced Analytics – Theory and MethodsDuring this lesson the following topics are covered:•Challenges with text analysis•Key tasks in text analysis•Definition of terms used in text analysis•Term frequency, inverse document frequency•Representation and features of documents and corpus•Use of regular expressions in parsing text•Metrics used to measure the quality of search results•Relevance with tf-idf, precision and recallLesson 8: Text Analysis
+Module 4: Analytics Theory/Methods 163
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Text AnalysisEncompasses the processing and representation of text for analysis and learning tasks•High-dimensionality Every distinct term is a dimensionGreen Eggs and Ham: A 50-D problem!•Data is Un-structured
+164Module 4: Analytics Theory/Methods
+163
+164
+--- Page 83 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 83
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Text Analysis – Problem-solving Tasks•ParsingImpose a structure on the unstructured/semi-structured text for downstream analysis•Search/Retrieval Which documents have this word or phrase?Which documents are about this topic or this entity?•Text-mining"Understand" the contentClustering, classification•Tasks are not an ordered listDoes not represent processSet of tasks used appropriately depending on the problem addressed
+Text Mining
+Search 
+&Retrieval
+Parsing
+165Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Example:  Brand Management•Acme currently makes two productsbPhonebEbook•They have lots of competition. They want to maintain their reputation for excellent products and keep their sales high.•What is the buzz on Acme? Search for mentions of Acme productsTwitter, Facebook, Review Sites, etc.What do people say?Positive or negative?What do people think is good or bad about the products?
+166Module 4: Analytics Theory/Methods
+165
+166
+--- Page 84 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 84
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Buzz Tracking: The ProcessParsethe data feeds to get actual content.Find and filter the raw text for product names(Use Regular Expression).1. Monitor social networks, review sites for mentions of our products.Extractthe relevant raw text.Convert the raw text into a suitable document representation.Indexinto our review corpus.2. Collect the reviews.Classification (or "Topic Tagging")3. Sort the reviews by product.Classification(sentiment analysis)4. Are they good reviews or bad reviews?We can keep a simple count here, for trend analysis.Search/Information Retrieval.5. Marketing calls up and reads selected reviews in full, for greater insight.
+167Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Parsing the Feeds•Impose structure on semi-structured data.•We need to know where to look for what we are looking for.1. Monitor social networks, review sites for mentions of our products
+Parsing
+168Module 4: Analytics Theory/Methods
+167
+168
+--- Page 85 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 85
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Regular Expressions•Regular Expressions (regexp) are a means for finding words, strings or particular patterns in text.•A match is a Boolean response.  The basic use is to ask “does this regexp match this string?”
+Parsing
+1. Monitor social networks, review sites for mentions of our productsNotematchesregexpPipe “|” means “or”bPhone, bphoneb[P|p]hone“*” matches 0 or more repetitions of the preceding letterbEbk, bEbok, bEbook, bEboook …bEbo*k“^” means start of a stringA line starting with "I love"^I love“$” means the end of a stringA line ending with “Acme”Acme$
+169Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Extract and Represent TextDocument Representation: A structure for analysis•"Bag of words" common representationA vector with one dimension for every unique term in spaceterm-frequency (tf): number times a term occursGood for basic search, classification•Reduce DimensionalityTerm Space – not ALL termsno stop words: "the", "a"often no pronounsStemming"phone" = "phones"2. Collect the reviews"I love LOVE my bPhone!"Convert this to a vector in the term space:0acme0bebook1bPhone0fantastic2love0slow0terrible0terrific
+Parsing
+170Module 4: Analytics Theory/Methods
+169
+170
+--- Page 86 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 86
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Document Representation - Other Features•Feature: Anything about the document that is used for search or analysis.•Title•Keywords or tags•Date information•Source information•Named entities2. Collect the reviews
+Parsing
+171Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Representing a Corpus (Collection of Documents)•Reverse indexFor every possible feature, a list of all the documents that contain that feature•Corpus metricsVolumeCorpus-wide term frequenciesInverse Document Frequency (IDF)more on this later•Challenge: a Corpus is dynamicIndex, metrics must be updated continuously2. Collect the reviews
+Parsing
+172Module 4: Analytics Theory/Methods
+171
+172
+--- Page 87 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 87
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Text Classification (I) - "Topic Tagging"Not as straightforward as it seems"The bPhone-5X has coverage everywhere. It's much less flaky than my old bPhone-4G.""While I love Acme's bPhone series, I've been quite disappointed by the bEbook. The text is illegible, and it makes even my old Newton look blazingly fast."3. Sort the Reviews by ProductText Mining
+173Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+"Topic Tagging"Judicious choice of featuresProduct mentioned in title?Tweet, or review?Term frequencyCanonicalize abbreviations"5X" = "bPhone-5X"3. Sort the Reviews by ProductText Mining
+174Module 4: Analytics Theory/Methods
+173
+174
+--- Page 88 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 88
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Text Classification (II) Sentiment Analysis•Naïve Bayes is a good first attempt•But you need tagged training data!The major bottleneck in text classification•What to do?Hand-taggingClues from review sites thumbs-up or down, # of starsCluster documents, then label the clusters4. Are they good reviews or bad reviews?Text Mining
+175Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Search and Information Retrieval•Marketing calls up documents with queries:Collection of search terms"bPhone battery life"Can also be represented as "bag of words"Possibly restricted by other attributeswithin the last monthfrom this review site
+Search 
+&Retrieval
+176Module 4: Analytics Theory/Methods
+5. Marketing calls up and reads selected reviews in full, for greater insight.
+175
+176
+--- Page 89 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 89
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Quality of  Search Results•RelevanceIs this document what I wanted?Used to rank search results•PrecisionWhat % of documents in the result are relevant?•RecallOf all the relevant documents in the corpus, what % were returned to me?5. Marketing calls up and reads selected reviews in full, for greater insight.
+Search 
+&Retrieval
+177Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Computing Relevance (Term Frequency)•Assign each term in a document a weight for that term.•The weight of a term tin a document d is a function of the number of times tappears in d. The weight can be simply set to the number of occurrences of tin d :tf(t, d)  =  count(t, d)The term frequency may optionally be normalized.5. Marketing calls up and reads selected reviews in full, for greater insight.
+Search 
+&Retrieval
+178Module 4: Analytics Theory/Methods
+177
+178
+--- Page 90 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 90
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Inverse Document Frequency (idf)idf(t) = log[N/df(t)]N: Number of documents in the corpusdf(t): Number of documents in the corpus that contain a term t•Measures term uniqueness in corpus"phone" vs. "brick"•Indicates the importance of the termSearch (relevance)Classification (discriminatory power)5. Marketing calls up and reads selected reviews in full, for greater insight.
+Search 
+&Retrieval
+179Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+TF-IDF and Modified Retrieval Algorithm•Term frequency – inverse document frequency (tf-idf or tfidf) of term t in document d:tfidf(t, d) = tf (t, d)* idf(t)query: brick, phone•Document with "brick" a few times more relevant than document with "phone" many times•Measure of Relevance with tf-idf•Call up all the documents that have any of the terms from the query, and sum up the tf-idf of each term:
+Search 
+&Retrieval
+180Module 4: Analytics Theory/Methods
+
+
+
+n][1,i
+i d),(td)Relevance( tfidf
+5. Marketing calls up and reads selected reviews in full, for greater insight.
+179
+180
+--- Page 91 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 91
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Other Relevance Metrics•"Authoritativeness" of sourcePageRank is an example of this•Recency of document•How often the document has been retrieved by other users5. Marketing calls up and reads selected reviews in full, for greater insight.
+Search 
+&Retrieval
+181Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Effectiveness of Search and Retrieval •Relevance metricimportant for precision, user experience•Effective crawl, extraction, indexingimportant for recall (and precision)more important, often, than retrieval algorithm•MapReduceReverse index, corpus term frequencies, idf
+Search 
+&Retrieval
+182Module 4: Analytics Theory/Methods
+181
+182
+--- Page 92 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 92
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Natural Language Processing•Unstructured text mining means extracting “features”Features are structured meta-data representing the documentGoal: “vectorize” the documents•After vectorization, apply advanced machine learning techniquesClusteringClassificationDecision TreesNaïve Bayesian ClassifierScoring Once models have been built, use them to automatically categorize incoming documents
+183Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+When I fist noticed it, I wanted to freak out.  There it was an object floating in on a direct path, It didn&apos;t move side to side or volley up and down. It moved as if though it had a mission or purpose. I was nervous, and scared,  So afraid in fact that I could feel my knees buckling. I guess because I didn&apos;t know what to expect and I wanted to act non aggressive. I though that I was either going to be taken, blasted into nothing, or…
+Source: http://www.infochimps.com/datasets/60000-documented-ufo-sightings-with-text-descriptions-and-metada
+Q:What is the witness describing? July 15th, 2010.  Raytown, MissouriA:An encounter with a UFO. Q:What is the emotional state of the witness? A:Frightened, ready to flee. 
+Example: UFOs Attack
+184Module 4: Analytics Theory/Methods
+183
+184
+--- Page 93 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 93
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Source: http://www.infochimps.com/datasets/60000-documented-ufo-sightings-with-text-descriptions-and-metada
+If we really are on the cusp of a major alien invasion, eyewitness testimony is the key to our survival as a species.When I fistnoticed it, I wanted to freak out.  There it was an object floating in on a direct path, It didn&apos;tmove side to side or volley up and down. It moved as if though it had a mission or purpose. I was nervous, and scared,  So afraid in factthat I could feel my knees buckling. I guess because I didn&apos;t know what to expect and I wanted to act non aggressive. I though that I was either going to be taken, blasted into nothing, or…
+TypoStrangely, the computer finds this account unreliable!
+Machine error
+Turn of phrase
+Ambiguous meaning
+“UFO” keyword missingExample: UFOs Attack
+185Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Investigators need to…Searchfor keywords and phrases, but your topic may be very complicated or keywords may be misspelled within the documentManagedocument meta-data like time, location and author.  Later retrieval may be key to identifying this meta-data early, and the document may be amenable to structure.Understandcontent via sentiment analysis, custom dictionaries, natural language processing, clustering, classification and good ol’ domain expertise. …with computer-aided text miningExample: UFOs Attack
+186Module 4: Analytics Theory/Methods
+185
+186
+--- Page 94 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 94
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Challenges - Text Analysis1.Finding the right structure for your unstructured data2.Very high dimensionality3.Thinking about your problem the right way
+187Module 4: Analytics Theory/Methods
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Check Your Knowledge 1.What are the two major challenges in the problem of text analysis?2.What is a reverse index? 3.Why is the corpus metrics dynamic. Provide an example and a scenario that explains the dynamism of the corpus metrics.4.How does tf-idf enhance the relevance of a search result?5.List and discuss a few methods that are deployed in text analysis to reduce the dimensions.
+Your Thoughts?
+188Module 4: Analytics Theory/Methods
+187
+188
+--- Page 95 ---
+Taner ARSAN, Assoc.Prof.Dr . 4/15/2025
+Module 4: Analytics Theory/Methods 95
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Module 4: Advanced Analytics – Theory and MethodsDuring this lesson the following topics were covered:•Challenges with text analysis•Key tasks in text analysis•Definition of terms used in text analysis•Term frequency, inverse document frequency•Representation and features of documents and corpus•Use of regular expressions in parsing text•Metrics used to measure the quality of search results•Relevance with tf-idf, precision and recallLesson 8: Text Analysis - Summary
+Module 4: Analytics Theory/Methods 189
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Module 4: Summary
+Module 4: Analytics Theory/Methods 190
+Methods Covered in this moduleKey Topics Covered in this moduleCategorization (unsupervised) :K-means clusteringAssociation RulesAlgorithms and technical foundationsRegressionLinearLogisticKey Use casesClassification (supervised)Naïve Bayesian classifierDecision TreesDiagnostics and validation of the modelTime Series AnalysisReasons to Choose (+) and Cautions (-) of themodelText AnalysisFitting, scoring and validating model in R and in-db functions
+189
+190
+
+==================================================
+FILE: materials\Module 5NEW_The End Game for CMPE403.pdf
+==================================================
+Number of Pages: 47
+
+--- Page 1 ---
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Module 5 – The Endgame, or Putting it All Together
+1Module : The Endgame5
+
+--- Page 2 ---
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Module 5 – The Endgame, or Putting it All Together
+Upon completion of this module, you should be able to:
+• Articulate three tasks needed to operationalize an analytics project
+• Explain how the four common deliverables of an analytics lifecycle 
+project meet the needs of key stakeholders
+• Use a framework for creating final presentations for sponsors and 
+analysts
+• Evaluate a data visualization and identify ways to improve it
+• Apply these concepts to a big data analytics problem
+Module : The Endgame5 2
+
+--- Page 3 ---
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Module 5 – The Endgame, or Putting it All Together
+During this lesson the following topics are covered:
+• Operationalizing a data analytics lifecycle project
+• Key outputs needed for a successful analytic project, by 
+stakeholder role
+• 4 core deliverables to meet most stakeholder needs
+Lesson 1: Operationalizing an Analytics Project
+Module : The Endgame5 3
+
+--- Page 4 ---
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Data Analytics Lifecycle
+Module : The Endgame5 4
+Discovery
+Operationalize
+Model 
+Planning
+Data Prep
+Model 
+Building
+Communicate 
+Results 
+Do I have enough 
+information to draft an 
+analytic plan and share for 
+peer review?
+Do I have 
+enough good 
+quality data to 
+start building 
+the model?
+Do I have a good idea 
+about the type of model 
+to try?  Can I refine the 
+analytic plan?
+Is the model robust 
+enough?  Have we 
+failed for sure?
+1
+2
+3
+4
+6
+5
+--- Page 5 ---
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Data Analytics Lifecycle
+Final Deliverables
+Module : The Endgame5 5
+Discovery
+Operationalize
+Model 
+Planning
+Data Prep
+Model 
+Building
+Communicate 
+Results 
+Do I have enough 
+information to draft an 
+analytic plan and share for 
+peer review?
+Do I have 
+enough good 
+quality data to 
+start building 
+the model?
+Do I have a good idea 
+about the type of model 
+to try?  Can I refine the 
+analytic plan?
+Is the model robust 
+enough?  Have we 
+failed for sure?
+6
+• Run a pilot
+• Assess the benefits 
+• Provide final deliverables
+• Implement the model in the 
+production environment
+• Define process to update, retrain, 
+and retire the model, as needed
+--- Page 6 ---
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Key Outputs from a Successful Analytic Project, by Role
+Module : The Endgame5 6
+Role Description What the Role Needs in the Final Deliverables
+Business User 
+Someone who benefits from the end results and can consult 
+and advise project team on value of end results and how 
+these will be operationalized
+• Sponsor Presentation addressing: 
+• Are the results good for me?
+• What are the benefits of the findings?
+• What are the implications of this for me? 
+Project 
+Sponsor 
+Person responsible for the genesis of the project, providing 
+the impetus for the project and core business problem, 
+generally provides the funding and will gauge the degree of 
+value from the final outputs of the working team 
+• Sponsor Presentation addressing: 
+• What’s the business impact of doing this? 
+• What are the risks? ROI?
+• How can this be evangelized within the 
+organization (and beyond)?
+Project 
+Manager 
+Ensure key milestones and objectives are met on time and at 
+expected quality.
+Business 
+Intelligence 
+Analyst 
+Business domain expertise with deep understanding of the 
+data, KPIs, key metrics and business intelligence from a 
+reporting perspective
+• Show the analyst presentation 
+• Determine if the reports will change 
+Data Engineer 
+Deep technical skills to assist with tuning SQL queries for 
+data management, extraction and support data ingest to 
+analytic sandbox
+• Share the code from the analytical project
+• Create technical document on how to 
+implement it.
+Database 
+Administrator 
+(DBA)
+Database Administrator who provisions and configures 
+database environment to support the analytical needs of the 
+working team
+• Share the code from the analytical project
+• Create technical document on how to 
+implement it.
+Data Scientist
+Provide subject matter expertise for analytical techniques, 
+data modeling, applying valid analytical techniques to given 
+business problems and ensuring overall analytical objectives 
+are met 
+• Show the analyst presentation  
+• Share the code
+--- Page 7 ---
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+4 Core Deliverables to Meet Most Stakeholder Needs
+Module : The Endgame5 7
+1.  Presentation for Project Sponsors
+• “Big picture" takeaways for executive level stakeholders. 
+• Determine key messages to aid their decision-making process.
+• Focus on clean, easy visuals for the presenter to explain and for the 
+viewer to grasp. 
+2.  Presentation for Analysts 
+• Business process changes.
+• Reporting changes.
+• Fellow data scientists will want the details and are comfortable with 
+technical graphs (such as ROC curves, density plots, histograms).
+3.  Code for technical people
+4.  Technical specs of implementing the code 
+--- Page 8 ---
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Module 5: The Endgame, or Putting it All Together
+During this lesson the following topics were covered:
+• Operationalizing a data analytics lifecycle project
+• Key outputs needed for a successful analytic project, by 
+stakeholder role
+• 4 core deliverables to meet most stakeholder needs
+Lesson 1: Summary
+Module : The Endgame5 9
+
+--- Page 9 ---
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Module 5: The Endgame, or Putting it All Together
+During this lesson the following topics are covered:
+• Brief review of YoyoDyne case study
+• Using a core set of materials to deliver presentations for two 
+different audiences
+• Comparing the main focus areas for sponsors and analyst 
+audiences
+• Using a framework to organize the main pieces of your final 
+presentations
+• Tips for sharing your code and technical documentation
+Lesson 2: Creating the Final Deliverables
+Module : The Endgame5 10
+
+--- Page 10 ---
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+YoyoDyne Churn Prediction Case Study 
+Situation Synopsis
+• Retail Bank, Yoyodyne Bank wants to improve the Net Present Value  (NPV) 
+and retention rate of the customers . 
+• They want to establish an effective marketing campaign targeting customers 
+to reduce the churn rate by at least five percent. 
+• The bank wants to determine whether those customers are worth retaining. 
+In addition, the bank also wants to analyze reasons for customer attrition and 
+what they can do to keep them. 
+• The bank wants to build a data warehouse to support marketing and other 
+related customer care groups. 
+11
+Mini Case Study: Churn Prediction for 
+Yoyodyne Bank
+Module 5: The Endgame 
+--- Page 11 ---
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Use Analytic Plan to Guide Final Presentation 
+12
+Components of 
+Analytic Plan Retail Banking: Yoyodyne  Bank
+Discovery Business 
+Problem Framed How do we identify churn/no churn for a customer?
+Initial Hypotheses Transaction volume and type are key predictors of churn rates
+Data & Scope 5 months of customer account history
+Model Planning  - 
+Analytic Technique Logistic regression to identify most influential factors predicting churn
+Result &                             
+Key Findings 
+Once customers stop using their accounts for gas and groceries, they will 
+soon erode their accounts and churn.
+If customers use their debit card fewer than 5 times per month, they will 
+leave the bank within 60 days.
+Business Impact
+If we can target customers who are high-risk for churn, we can reduce 
+customer attrition by 25%.  This would save $3 million in lost customer 
+revenue and avoid $1.5 million in new customer acquisition costs each 
+year.
+12Module : The Endgame5
+Mini Case Study:  
+Churn Prediction for 
+Retail Banking
+--- Page 12 ---
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Key Aspects of Final Presentation Material 
+• Reflect on the project:
+ Consider the context of the problems you set out to solve.
+ Identify observations about the model outputs, scoring, results.
+ Identify Key Messages, and any unexpected insights.
+• Tailor outputs to the audience 
+13Module : The Endgame5
+Project Sponsor Presentation Analyst Presentation
+Focus What How
+Objectives
+• Show that you met the project goals
+• Give your sponsor talking points to 
+evangelize the work
+• Emphasize ROI and business value
+• Mention if the models can be deployed 
+within sponsor’s SLA
+• Show how you met the project goals
+• Share your methods so analysts can 
+learn from it for future projects
+• Discuss methods, techniques, and 
+technologies used.  
+• Provide specific model accuracy and 
+speed (example: how well will it meet 
+SLAs).
+--- Page 13 ---
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Develop Core Material you can use to Deliver 
+Presentations to 2 Main Audiences
+Presentation 
+Component
+Project Sponsor Presentation Analyst Presentation
+Project Goals • List top 3 agreed upon goals • List top 3 agreed upon goals
+Main Findings  • Emphasize key message • Emphasize key message
+Approach • High Level Methodology • High Level Methodology
+• Relevant details on modeling techniques and technology
+Model Description • Overview of the modeling technique • Overview of the modeling technique
+3 key points 
+supported with data 
+• Support key points with simple charts 
+and graphics (example: bar charts)
+• Show details to support the key points 
+• Analyst-oriented charts and graphs (ROC curves, histograms)
+• Visuals of key variables and significance of each
+Model Details • Omit this section, or discuss only at a 
+very high level
+• Show the code or main logic of the model, Include the model type, 
+variables, technology used to execute it and score data.  
+• Identify key variables and impact of each 
+• Describe expected model performance and any caveats
+• Detailed description of the modeling technique
+• Discuss variables, scope, predictive power
+Recommendations
+• Focus on business impact of doing this, 
+including risks and ROI
+• Give the sponsor salient points to help 
+him or her evangelize the work within 
+the organization
+• Supplement recommendations with any implications for the modeling, 
+or for deploying in a production environment.
+14Module : The Endgame5
+= Same components for both presentations = Different components for Sponsor vs. Analyst presentation
+--- Page 14 ---
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Project Goals
+Module : The Endgame5 15
+Presentation 
+Component
+Project Sponsor Presentation Analyst Presentation
+Project Goals • List top 3 agreed upon goals • List top 3 agreed upon goals
+Example 1 of Goals slide Example 2 of Goals slide, with Situation overview
+v
+--- Page 15 ---
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Main Findings (Executive Summary)
+Presentation Component Project Sponsor Presentation Analyst Presentation
+Main Findings 
+(executive summary) • Emphasize key message • Emphasize key message
+Module : The Endgame5 17
+• Enable reader to grasp 
+full synopsis in 1 slide
+• Frame outcomes in 
+terms of business value 
+• Generally same, or very 
+similar, for both types of 
+audiences 
+v
+--- Page 16 ---
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Anatomy of an Executive Summary
+Module : The Endgame5 18
+Key 
+Message
+Major 
+Points
+Business Impact
+SLA
+v
+--- Page 17 ---
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Approach
+Module : The Endgame5 19
+Presentation 
+Component
+Project Sponsor Presentation Analyst Presentation
+Approach • High Level Methodology
+• High Level Methodology
+• Relevant details on modeling techniques 
+and technology
+Example Approach slide, for Sponsors Example Approach slide, for Analysts
+Note:  Green boxes highlight differences between slides
+v
+--- Page 18 ---
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Model Description 
+Module : The Endgame5 20
+Presentation 
+Component
+Project Sponsor Presentation Analyst Presentation
+Model Description • Overview of the modeling 
+technique • Overview of the modeling technique
+v
+--- Page 19 ---
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+• Identify key points based on your 
+insights and observations 
+resulting from the data and model 
+scoring results 
+• Illustrate  your key points with 
+charts and visualizations 
+• Use simpler charts for Sponsors
+Key Points Supported With Data 
+Module : The Endgame5 21
+v
+Presentation 
+Component
+Project Sponsor 
+Presentation
+Analyst Presentation
+Key Points 
+Supported With 
+Data 
+• Support key points 
+with simple charts 
+and graphics (such 
+as bar charts)
+• Show details to support the key points 
+• Analyst-oriented charts and graphs (ROC curves, histograms)
+• Visuals of key variables and significance of each
+--- Page 20 ---
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Model Details
+Presentation 
+Component
+Project Sponsor 
+Presentation
+Analyst Presentation
+Model Details
+• Omit this section, 
+or discuss only at a 
+very high level
+• Show the code or main logic of the model, Include the model 
+type, variables, technology used to execute it and score data.  
+• Describe expected model performance and any caveats
+• Detailed description of the modeling technique, variables, scope, 
+predictive power
+22
+v
+Module : The Endgame5
+--- Page 21 ---
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Recommendations
+Presentation 
+Component
+Project Sponsor Presentation Analyst Presentation
+Recommendations
+• Focus on business impact of the project, 
+including risks and ROI
+• Give the sponsor salient points to help him 
+or her evangelize the work within the 
+organization
+• Supplement recommendations with 
+any implications for the modeling, or 
+for deploying in a production 
+environment.
+23
+v
+Module : The Endgame5
+--- Page 22 ---
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Quick Summary of Final Presentation Components 
+Module : The Endgame5 24
+
+--- Page 23 ---
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Top 10 Tips, Tricks, & Pitfalls to Avoid for the Final Presentation 
+1. Be visual.  Generally, the more visual the better. Up to a point.  
+2. Be MECE (Mutually Exclusive and Collectively Exhaustive).
+3. Tie your ideas together….don’t force people to tie your ideas together, guide people 
+and help them draw logical connections.
+4. Don’t forget that not everyone has gone through the Discovery phase like you have.  
+5. Context is key.  Orient people to the project itself, as well as the graphics you use, 
+the terminology and jargon (spell out acronyms).
+6. Don’t assume people see the obvious benefits.
+7. Measure and quantify the benefits.  Be specific.  “$8.5M in annual cost savings” is 
+much stronger than “Great Value”.
+8. Be patient.  You may have to tell your story more than once…consider these 
+sessions opportunities to refine your message and share good work that was done.
+9. Let the intended audience guide you in shaping the right message and level of 
+detail.
+10. Avoid long bulleted lists  
+Module : The Endgame5 25
+--- Page 24 ---
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Overview of Code & Technical Documentation 
+26
+• Consider the interests of your technical audience:
+ How will the project affect them? 
+ In what ways will it change their day-to-day roles, or existing processes? 
+ Be aware of the implications of your work on their roles as you create 
+these technical deliverables.
+• 2 Technical deliverables:
+ Code 
+ Technical specifications and documentation. 
+Module : The Endgame5
+--- Page 25 ---
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Considerations for Technical Specifications & Documentation 
+27
+• Inputs & Pre-processing:
+ Discuss the expected pre-processing steps before data goes to the model code.  
+ Document expected input, data format, source tables, and units.
+ Describe the processing script are you using.
+ Explain how the outputs are created.
+• Exception handling :
+ Explain how to deal with exceptions to the model.
+ Provide guidance for making decisions on the exceptions.  
+• Post-processing:
+ After you create the output, discuss any post-processing before going to the next 
+step.
+ Interpreting a threshold as opposed to a simple yes/no.
+Module : The Endgame5
+Approach the documentation as if it’s for an API (application programming interface)
+--- Page 26 ---
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Providing Your Code 
+28
+• Test for accuracy in the production environment
+• Ensure the code will run quickly and meet SLAs
+• Include comment lines in the code
+• Hold a briefing with the engineers who will implement the code
+Module : The Endgame5
+--- Page 27 ---
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Module 5: The Endgame, or Putting it All Together
+During this lesson the following topics were covered:
+• Brief review of YoyoDyne case study
+• Using a core set of materials to deliver presentations for two 
+different audiences
+• Comparing the main focus areas for sponsors and analyst 
+audiences
+• Using a framework to organize the main pieces of your final 
+presentations
+• Tips for sharing your code and technical documentation
+Lesson 2: Summary
+Module : The Endgame5 29
+
+--- Page 28 ---
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Module 5:  “The Endgame” or Putting it All Together 
+During this lesson the following topics are covered:
+• Survey of data visualization tools
+• Creating different visualizations for sponsors and analysts
+• Developing visuals to support your key points 
+• How to clean up a chart or visualization
+• Tips and tricks
+Lesson  3:  Data Visualization Techniques
+Module : The Endgame5 30
+
+--- Page 29 ---
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Key Points Supported With Data 
+Overview of Visualization Tools
+• R
+ Base package
+ ggplot
+ Lattice
+• Ggobi/Rggobi 
+• Inkscape
+• Processing
+• Modest Maps
+• GnuPlot
+• Tableau 
+• Spotfire 
+• Qlikview
+• Adobe Illustrator
+Open Source
+ Commercial Tools
+31Module : The Endgame5
+--- Page 30 ---
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Key Points Supported With Data 
+Tables of Information 
+Module : The Endgame5 32
+Year
+1962
+1964
+1965
+1967
+1968
+1969
+1970
+1971
+1972
+1973
+1974
+1975
+1976
+1977
+1978
+1979
+1980
+1981
+1982
+1983
+1984
+1985
+1986
+1987
+1988
+1989
+1990
+1991
+1992
+1993
+1994
+1995
+1996
+1997
+1998
+1999
+2000
+2001
+2002
+2003
+2004
+2005
+2006
+Grand Total
+SuperBox 1 1 1 1 5 4 4 14 13 14 20 14 17 29 24 37 33 117 42 65 79 81 90 92 82 86 106 72 62 62 40 49 22 26 33 47 78 71 67 64 91 91 33 1980
+BigBox 1 1 1 1 4 5 5 5 10 10 10 6 21 33 21 22 20 29 31 50 43 45 72 91 76 94 67 80 31 34 33 33 27 35 47 32 39 27 4 1196
+Grand Total 1 1 1 2 5 5 5 15 17 19 25 19 27 39 34 43 54 150 63 87 99 110 121 142 125 131 178 163 138 156 107 129 53 60 66 80 105 106 114 96 130 118 37 3176
+• What do you observe from this data? 
+• What’s the main message? 
+• What is the author trying to emphasize with the data? 
+• Tailor outputs to the audience 
+Year
+1972
+1973
+1974
+1975
+1976
+1977
+1978
+1979
+1980
+1981
+1982
+1983
+1984
+1985
+1986
+1987
+1988
+1989
+1990
+1991
+1992
+1993
+1994
+1995
+1996
+1997
+1998
+1999
+2000
+2001
+2002
+2003
+2004
+2005
+2006
+Grand 
+Total
+SuperBox 13 14 20 14 17 29 24 37 33 117 42 65 79 81 90 92 82 86 106 72 62 62 40 49 22 26 33 47 78 71 67 64 91 91 33 1980
+BigBox 4 5 5 5 10 10 10 6 21 33 21 22 20 29 31 50 43 45 72 91 76 94 67 80 31 34 33 33 27 35 47 32 39 27 4 1196
+Grand Total 17 19 25 19 27 39 34 43 54 150 63 87 99 110 121 142 125 131 178 163 138 156 107 129 53 60 66 80 105 106 114 96 130 118 37 3176
+44 years of BigBox stores data
+34 years of BigBox stores data
+--- Page 31 ---
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Key Points Supported With Data 
+Using Visuals to Illustrate Key Points 
+Module : The Endgame5 33
+Example of a Visual to help tell a story to a Sponsor
+--- Page 32 ---
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Evolution of a Graph
+Hypothetical Example:  Exploring Pricing Data
+Module : The Endgame5 34
+Example of exploring customer price data, price distributions and stability over time
+Example of exploring price tiering for most and least loyal customers 
+--- Page 33 ---
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Evolution of a Graph, Analyst Example
+Module : The Endgame5 35
+• Implementing new price tiering 
+approach increases the precision of 
+price promotions by 23% 
+• Price optimization model explains 
+92% of customer behavior 
+• Model can be run in production 
+environment on daily basis, if 
+needed, to tailor changes to direct 
+mail campaigns and web 
+promotional offers 
+--- Page 34 ---
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Evolution of a Graph, Sponsor Example
+Module : The Endgame5 36
+• Before the project, pricing promotions 
+were offered to all customers equally
+• With the new approach:
+ Highly loyal customers do not receive as 
+many price promotions, since their loyalty 
+is not strongly influenced by price
+ Customers with low loyalty are influenced 
+by price, and we can now target them for 
+this purpose better
+• We project multiple cost savings with this 
+approach 
+ $2M in lost customers
+ $1.5M in new customer acquisition costs
+ $1M in reductions for pricing promotions
+--- Page 35 ---
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Key Points Supported With Data 
+Common Representation Methods 
+If you want to compare this kind of 
+information….
+…consider this kind of chart
+Components Pie chart
+Item Bar chart
+Time Series Line chart
+Frequency Line charts, histograms
+Correlation Scatterplot, side-by-side bar charts
+Module : The Endgame5 37
+--- Page 36 ---
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+How to Clean Up a Graphic, Example 1
+The Before Picture 
+Module : The Endgame5 38
+0
+5
+10
+15
+20
+25
+30
+35
+40
+45
+50
+55
+60
+65
+70
+75
+80
+85
+90
+95
+100
+105
+110
+115
+120
+125
+1962 1965 1968 1970 1972 1974 1976 1978 1980 1982 1984 1986 1988 1990 1992 1994 1996 1998 2000 2002 2004 2006
+Chart junk
+1.Horizontal 
+Grid Lines
+2.Chunky data 
+points
+3.Overuse of 
+emphasis 
+colors; lines 
+& border
+4.No context 
+or labels
+5.Crowded axis 
+labels
+• What are the main messages here? What is the author trying to emphasize?
+• What’s wrong with this picture?
+--- Page 37 ---
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+How to Clean Up a Graphic, Example 1 
+After 
+Module : The Endgame5 39
+• What are the main messages here? 
+• What is the author trying to emphasize?
+0
+20
+40
+60
+80
+100
+120
+140
+1962 1967 1972 1977 1982 1987 1992 1997 2002
+Growth of SuperBox Stores 
+(Count of Stores)
+SuperBox BigBox
+-40
+-20
+0
+20
+40
+60
+80
+100
+1962 1967 1972 1977 1982 1987 1992 1997 2002
+Difference in Store Openings 
+(Count of SuperBox - Count of BigBox Stores) 
+Diff in SuperBox vs. BigBox
+--- Page 38 ---
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+How to Clean Up a Graphic, Example 2
+The Before Picture 
+Module : The Endgame5 40
+Chart junk
+1.Vertical Grid Lines
+2.Too much emphasis 
+colors
+3.No chart title
+4.Legend at right 
+restricts chart space
+5.Labels are too small
+• What are the main messages here? What is the author trying to emphasize?
+• What’s wrong with this picture?
+0
+20
+40
+60
+80
+100
+120
+140
+1996 1997 1998 1999 2000 2001 2002 2003 2004 2005 2006
+SuperBox
+BigBox
+Grand Total
+--- Page 39 ---
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+How to Clean Up a Graphic, Example 2 
+After 
+Module : The Endgame5 41
+• What are the main messages here? 
+• What is the author trying to emphasize?
+0
+20
+40
+60
+80
+100
+120
+140
+1996 1997 1998 1999 2000 2001 2002 2003 2004 2005 2006
+Total Growth of Stores, Over Time
+SuperBox BigBox Grand Total
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+1996 1997 1998 1999 2000 2001 2002 2003 2004 2005 2006
+Growth of SuperBox Stores 
+(Count of Stores)
+SuperBox BigBox
+--- Page 40 ---
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+A Quick Word About Using 3D Charts:  Avoid Them! 
+Module : The Endgame5 42
+Chart A:  2-Dimensional Chart B:  3-Dimensional
+• Difficult to gauge actual data
+• Scaling becomes deceptive
+• Does not make graphic fancier, just 
+harder to understand 
+• Simple
+• Easy to understand
+• Focus on the data, not the graphics
+2-Dimensional Charts 3-Dimensional Charts 
+0
+20
+40
+60
+80
+100
+1996 1997 1998 1999 2000 2001 2002 2003 2004 2005 2006
+Growth of SuperBox Stores 
+(Count of Stores)
+SuperBox BigBox
+0
+20
+40
+60
+80
+100
+Growth of SuperBox Stores 
+(Count of Stores)
+SuperBox BigBox
+--- Page 41 ---
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Key Points with Data Visualizations
+43
+• Remove distractions
+ Minimize “chart junk”
+ Data-Ink Ratio
+• Choose the simplest, clearest visual for the situation
+ Strive to illustrate your points
+ Charts should serve to reinforce your key points 
+ Charts vs. Data Art 
+• Use color deliberately
+ Emphasis Colors vs. Standard Colors 
+ In most cases, less is more
+ Focus on the contrast
+• Context
+ Consistent scales, labels, axes
+ Using logs vs. raw values to show differences 
+Module : The Endgame5
+--- Page 42 ---
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Module 5: The Endgame, or Putting it All Together
+During this lesson the following topics were covered:
+• Survey of data visualization tools.
+• Creating different visualizations for sponsors and analysts.
+• Developing visuals to support your key points. 
+• How to clean up a chart or visualization. 
+• Tips and tricks
+Lesson 3: Summary
+Module : The Endgame5 44
+
+--- Page 43 ---
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Check Your Knowledge 
+• What are the 4 key main deliverables for operationalizing a data 
+analytics project?
+• Give an example of an appropriate data visualization for an 
+analyst presentation and one for a sponsor?
+•  Name 3 considerations for delivering your code or technical 
+documentation
+• What is chart junk?  What are some ways to address it in a 
+visualization?  
+45Module : The Endgame5
+--- Page 44 ---
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Final Lab Exercise on Big Data Analytics 
+46
+This lab allows students to apply what they have learned 
+from the analytical methods and tools to a big data problem 
+using the Analytics Lab Environment. 
+•  After completing the tasks in this lab you should be able 
+to:
+ Explore the big data set provided and prepare the 
+data for analysis.  
+ Assess data quality, outliers and training sets.
+ Conduct model selection, code, execute and score the 
+model.
+ Use R and PSQL statements during your analysis of big 
+data. 
+ Create a narrative summary of your findings, using the 
+methods shared earlier in this module.
+Module : The Endgame5
+--- Page 45 ---
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Module 5: The Endgame, or Putting it All Together
+During this module the following topics were covered:
+• Three tasks needed to operationalize an analytics project
+• Four common deliverables of an analytics lifecycle project meet the 
+needs of key stakeholders
+• A framework for creating final presentations for sponsors and 
+analysts
+• Evaluation and improvement of data visualizations
+• These concepts applied to a big data analytics problem in the final 
+lab
+Module 5: Summary
+Module : The Endgame5 47
+
+--- Page 46 ---
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Course Summary
+Key points covered in this course:
+• Participation as a data science team member on big data and 
+other analytics projects by:
+ Deploying a structured lifecycle approach to data science and big data analytics 
+projects
+ Reframing a business challenge as an analytics challenge
+ Applying analytic techniques and tools to analyze big data, create statistical 
+models, and identify insights that can lead to actionable results
+ Selecting optimal visualization techniques to clearly communicate analytic 
+insights to business sponsors and others
+ Using tools such as R and RStudio, MapReduce/Hadoop, in-database analytics, 
+and window and MADlib functions
+• How advanced analytics can be leveraged to create competitive 
+advantage and how the Data Scientist role and skills differ from 
+those of a traditional business intelligence analyst
+Module 6: The Endgame 48
+--- Page 47 ---
+Copyright © 2014 EMC Corporation. All Rights Reserved.
+Thank You!
